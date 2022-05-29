@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
+import path from "path";
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -15,6 +16,9 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
+        defaultLayouts: {
+          pages: path.resolve("./src/components/article-layout.tsx"),
+        },
       }
     }, {
       resolve: 'gatsby-source-filesystem',
