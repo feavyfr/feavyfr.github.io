@@ -1,11 +1,15 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import Layout from "../components/layout"
+import { Helmet } from "react-helmet"
 
 // markup
 const NotFoundPage = () => {
   return (
-    <main>
-      <title>Not found</title>
+    <Layout>
+      <Helmet>
+        <title>Not found</title>
+      </Helmet>
       <h1>Oops</h1>
       <p>
         Sorry{" "}
@@ -16,7 +20,7 @@ const NotFoundPage = () => {
         <br />
         <Link to="/">Go home</Link>.
       </p>
-    </main>
+    </Layout>
   )
 }
 
