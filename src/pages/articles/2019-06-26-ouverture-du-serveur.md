@@ -12,3 +12,11 @@ C'est avec beaucoup de plaisir que j'ai l'honneur de vous annoncer l'**ouverture
 * Feavy
 
 ![look](../../images/look.png)
+
+```java
+public class Main {
+    public static void main(String... args) {
+        System.out.println("Hello world!");
+    }
+}
+```

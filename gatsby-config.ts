@@ -21,6 +21,12 @@ const config: GatsbyConfig = {
         },
         gatsbyRemarkPlugins: [
           {
+            resolve: "gatsby-remark-highlight-code",
+            options: {
+              lineNumbers: true
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1200,
