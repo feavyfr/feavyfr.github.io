@@ -19,7 +19,7 @@ const config: GatsbyConfig = {
         defaultLayouts: {
           pages: path.resolve("./src/components/article-layout.tsx"),
         },
-        gatsbyRemarkPlugins: [
+        gatsbyRemarkPlugins: ["gatsby-remark-unwrap-images",
           {
             resolve: "gatsby-remark-highlight-code",
             options: {
@@ -30,17 +30,11 @@ const config: GatsbyConfig = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1200,
+              showCaptions: ['title']
             },
           },
         ]
       }
-    }, {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        "name": "images",
-        "path": "./src/images/"
-      },
-      __key: "images"
     }, {
       resolve: 'gatsby-source-filesystem',
       options: {
