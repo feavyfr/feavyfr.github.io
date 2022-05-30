@@ -19,6 +19,14 @@ const config: GatsbyConfig = {
         defaultLayouts: {
           pages: path.resolve("./src/components/article-layout.tsx"),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ]
       }
     }, {
       resolve: 'gatsby-source-filesystem',
