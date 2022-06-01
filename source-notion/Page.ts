@@ -1,6 +1,6 @@
-import { Block, NotionIcon, NotionImage, NotionProperties } from "./Types";
+import { Block, NotionIcon, NotionImage } from "./Types";
 import { toSlug } from "./articles";
-import { plaintexts } from "./notion-utils";
+import { plaintexts } from "./notion-to-markdown";
 
 export default interface Page {
     id: string;

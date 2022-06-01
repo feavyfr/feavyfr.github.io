@@ -1,11 +1,10 @@
 import { deleteArticle, generateArticle, getLocalArticles, getNotionArticles, hasUpdate } from "./articles";
 
 (async () => {
-    const [notionArticles, localArticles] = await Promise.all([getNotionArticles(), getLocalArticles()]);
+    const [notionArticles, localArticles] = await Promise.all([getNotionArticles("80035349b4bb4c16b89af4f3db64f97e"), getLocalArticles()]);
 
     for (const [_, notion] of notionArticles) {
         if (!localArticles.has(notion.slug)) {
-            // console.dir(notion);
             generateArticle(notion);
             console.log("CREATE article: " + notion.slug);
             continue;
