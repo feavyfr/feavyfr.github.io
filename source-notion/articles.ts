@@ -26,12 +26,12 @@ export interface LocalArticle {
 }
 
 export async function getLocalArticles() {
-    const slugs = listDirectories("./src/pages/articles");
+    const slugs = listDirectories("./src/articles");
     const articles: Map<string, LocalArticle> = new Map();
     const promises: Promise<void>[] = [];
     for (const slug of slugs) {
         promises.push(new Promise(resolve => {
-            const stream = fs.createReadStream(`./src/pages/articles/${slug}/index.md`, { encoding: "utf-8", start: 0, end: 200 });
+            const stream = fs.createReadStream(`./src/articles/${slug}/index.md`, { encoding: "utf-8", start: 0, end: 200 });
             stream.on("data", (data: string) => {
                 const last_edited_time = data.split("last_edited_time: ")[1].split(/\r?\n/)[0];
                 articles.set(slug, { slug, last_edited_time });
@@ -60,5 +60,5 @@ export async function generateArticle(article: Page) {
 }
 
 export async function deleteArticle(article: LocalArticle) {
-    return new Promise(resolve => fs.rm(`./src/pages/articles/${article.slug}/`, { recursive: true, force: true }, resolve));
+    return new Promise(resolve => fs.rm(`./src/articles/${article.slug}/`, { recursive: true, force: true }, resolve));
 }

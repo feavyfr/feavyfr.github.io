@@ -36,5 +36,5 @@ export const setPageProperties = (page: Page) => {
         page.tags = [];
     }
         
-    page.path = `./src/pages/articles/${page.slug}`;
+    page.path = `./src/articles/${page.slug}`;
 };

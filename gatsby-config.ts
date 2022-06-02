@@ -1,5 +1,13 @@
 import type { GatsbyConfig } from "gatsby";
-import path from "path";
+import templates from "./templates";
+
+const templateSources = Object.entries(templates).map(([name, template]) => ({
+  resolve: "gatsby-source-filesystem",
+  options: {
+    "name": name,
+    "path": `./src/${name}/`
+  }
+}));
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -16,9 +24,6 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
-        defaultLayouts: {
-          pages: path.resolve("./src/components/article-layout.tsx"),
-        },
         gatsbyRemarkPlugins: ["gatsby-remark-unwrap-images",
           {
             resolve: "gatsby-remark-highlight-code",
@@ -35,14 +40,16 @@ const config: GatsbyConfig = {
           },
         ]
       }
-    }, {
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         "name": "pages",
         "path": "./src/pages/"
       },
       __key: "pages"
-    }]
+    }
+  ].concat(templateSources as any)
 };
 
 export default config;

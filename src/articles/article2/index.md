@@ -5,6 +5,7 @@ title: Article 2
 category: Non classé
 tags: []
 cover: 
-icon: ./images/icon.png
+icon_emoji: 
+icon_image: ./images/icon.png
 ---
 test!!??

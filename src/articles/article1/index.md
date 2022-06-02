@@ -5,7 +5,8 @@ title: Article 1
 category: Category test
 tags: ["Test"]
 cover: ./images/cover.jpg
-icon: 👋
+icon_emoji: 👋
+icon_image:
 ---
 Contenu de l’article 1!!!
 
