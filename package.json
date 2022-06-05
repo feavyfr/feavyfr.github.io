@@ -11,6 +11,7 @@
     "fetch": "ts-node ./source-notion/index.ts",
     "dev": "gatsby develop",
     "start": "gatsby develop",
+    "prod": "yarn fetch && yarn build",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
