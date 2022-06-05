@@ -19,6 +19,9 @@ if [ ! -z "${DEPLOY_PRIME_URL}" ]; then
     ssh-keyscan -H github.com >> ~/.ssh/known_hosts
     ssh-keyscan -H bitbucket.org >> ~/.ssh/known_hosts
 
+    git remote add origin git@github.com:Feavy/gatsby-notion.git || true
+    git config --local user.email 'gatsby-notion'
+    git config --local user.name 'gatsby-notion'
     git fetch
     git checkout main
     # git reset --hard origin/main
