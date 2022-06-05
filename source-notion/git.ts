@@ -11,7 +11,7 @@ export async function commitAll(): Promise<void> {
         // + "git add . &&"
         // + "git commit -m 'Push generated content [skip ci]'
         const script =
-            "git --no-pager log && git add . && git commit -m 'Push generated content [skip ci]' && git status";
+            "git remote add origin git@github.com:Feavy/gatsby-notion.git && git config --local user.email 'gatsby-notion' && git config --local user.name 'gatsby-notion' && git --no-pager log && git add . && git commit -m 'Push generated content [skip ci]' && git status";
 
         exec(script, (err, stdout, stderr) => {
             if (err) {

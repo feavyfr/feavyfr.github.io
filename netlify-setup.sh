@@ -19,7 +19,9 @@ if [ ! -z "${DEPLOY_PRIME_URL}" ]; then
     ssh-keyscan -H github.com >> ~/.ssh/known_hosts
     ssh-keyscan -H bitbucket.org >> ~/.ssh/known_hosts
 
-    git fetch origin main
-    git reset --hard origin/main
+    git fetch
+    git checkout main
+    # git reset --hard origin/main
+    #new
 
 fi;
