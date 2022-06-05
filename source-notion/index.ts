@@ -1,11 +1,15 @@
 import { deleteArticle, generateArticle, getLocalArticles, getNotionArticles, hasUpdate } from "./articles";
+import { commitAll, push } from "./git";
 
 (async () => {
     const [notionArticles, localArticles] = await Promise.all([getNotionArticles("80035349b4bb4c16b89af4f3db64f97e"), getLocalArticles()]);
 
+    const promises: Promise<any>[] = [];
+
     for (const [_, notion] of notionArticles) {
         if (!localArticles.has(notion.slug)) {
-            generateArticle(notion);
+            const p = generateArticle(notion);
+            promises.push(p);
             console.log("CREATE article: " + notion.slug);
             continue;
         }
@@ -14,8 +18,9 @@ import { deleteArticle, generateArticle, getLocalArticles, getNotionArticles, ha
         
         if (hasUpdate(local, notion)) {
             console.log("UPDATE article: " + notion.slug);
-            deleteArticle(local)
-                .then(() => generateArticle(notion));
+            const p = deleteArticle(local)
+                        .then(() => generateArticle(notion));
+            promises.push(p);
             continue;
         }
         console.log("UNCHANGED article: " + notion.slug);
@@ -24,8 +29,14 @@ import { deleteArticle, generateArticle, getLocalArticles, getNotionArticles, ha
     for (const [slug, local] of localArticles) {
         if (!notionArticles.has(slug)) {
             console.log("DELETE article: " + local.slug);
-            deleteArticle(local)
+            const p = deleteArticle(local);
+            promises.push(p);
         }
     }
 
+    await Promise.all(promises);
+
+    await commitAll();
+    await push();
+    console.log("DONE");
 })();

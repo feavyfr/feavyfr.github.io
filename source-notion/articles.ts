@@ -31,6 +31,10 @@ export async function getLocalArticles() {
     const promises: Promise<void>[] = [];
     for (const slug of slugs) {
         promises.push(new Promise(resolve => {
+            if(!fs.existsSync(`./src/articles/${slug}/index.md`)) {
+                resolve();
+                return;
+            }
             const stream = fs.createReadStream(`./src/articles/${slug}/index.md`, { encoding: "utf-8", start: 0, end: 200 });
             stream.on("data", (data: string) => {
                 const last_edited_time = data.split("last_edited_time: ")[1].split(/\r?\n/)[0];
