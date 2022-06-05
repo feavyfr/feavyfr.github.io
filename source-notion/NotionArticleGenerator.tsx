@@ -12,10 +12,20 @@ export default class NotionArticleGenerator {
     frontMatter += `created_time: ${this.page.created_time}\n`;
     frontMatter += `last_edited_time: ${this.page.last_edited_time}\n`;
     frontMatter += `title: ${this.page.title}\n`;
-    frontMatter += `category: ${this.page.category}\n`;
-    frontMatter += `tags: ${JSON.stringify(this.page.tags)}\n`;
-    frontMatter += `cover: ${imageUrl(this.page.cover) || ""}\n`;
-    frontMatter += `icon: ${icon(this.page.icon) || ""}\n`;
+    
+    if(this.page.category)  
+      frontMatter += `category: ${this.page.category}\n`;
+    
+      frontMatter += `tags: ${JSON.stringify(this.page.tags)}\n`;
+
+    if(this.page.cover)
+      frontMatter += `cover: ${imageUrl(this.page.cover) || ""}\n`;
+
+    if(this.page.icon) {
+      const type = this.page.icon.type === "emoji" ? "emoji" : "image";
+      frontMatter += `icon_${type}: ${icon(this.page.icon)}\n`;
+    }
+
     frontMatter += "---\n";
     return frontMatter;
   }

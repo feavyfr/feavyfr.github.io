@@ -27,8 +27,6 @@ export const setPageProperties = (page: Page) => {
     }
     if(page.properties.category?.select) {
         page.category = page.properties.category.select.name;
-    }else{
-        page.category = "Non classé";
     }
     if(page.properties.tags?.multi_select) {
         page.tags = page.properties.tags.multi_select.map(select => select.name);
