@@ -13,17 +13,17 @@ export async function commitAll(): Promise<void> {
                 reject();
                 return;
             }
-            if(stderr) {
+            if (stderr) {
                 console.log(stderr);
             }
             console.log(stdout);
-            resolve(null);
+            resolve();
         });
     });
 }
 
 export async function push() {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
         console.log("Pushing changes to remote...");
 
         exec('git push --force origin main', (err, stdout, stderr) => {
@@ -33,7 +33,7 @@ export async function push() {
                 return;
             }
             console.log(stdout);
-            resolve(null);
+            resolve();
         });
     });
 }

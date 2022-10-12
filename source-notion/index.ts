@@ -36,7 +36,11 @@ import { commitAll, push } from "./git";
 
     await Promise.all(promises);
 
-    await commitAll();
-    await push();
+    try {
+        await commitAll();
+        await push();
+    }catch (e) {
+        console.log("Didn't not commit.", e);
+    }
     console.log("DONE");
 })();
