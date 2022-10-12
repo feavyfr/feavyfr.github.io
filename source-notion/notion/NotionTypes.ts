@@ -6,5 +6,3 @@ export type NotionImage = Extract<Awaited<ReturnType<Client['blocks']['retrieve'
 export type NotionIcon = Extract<Awaited<ReturnType<Client['databases']['query']>>['results'][number], {properties}>['icon'];
 
 export type NotionRichText = Extract<NotionBlock, { type: 'paragraph' }>['paragraph']['rich_text'][number];
-
-export type Block = NotionBlock & ({ has_children: false } | { has_children: true; children: Block[] });

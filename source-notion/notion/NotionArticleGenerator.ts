@@ -1,8 +1,9 @@
-import downloadImage from './image';
-import { blocksToMarkdown, imageUrl, icon } from './notion-to-markdown';
+import downloadImage from '../image';
 import Page from './Page';
-import type { NotionImage } from './Types';
 import fs from "fs";
+import {icon, imageUrl} from "./NotionUtils";
+import Image from "./blocks/Image";
+import {NotionImage} from "./NotionTypes";
 
 export default class NotionArticleGenerator {
   public constructor(private page: Page) { }
@@ -17,7 +18,7 @@ export default class NotionArticleGenerator {
     if(this.page.category)  
       frontMatter += `category: ${this.page.category}\n`;
     
-      frontMatter += `tags: ${JSON.stringify(this.page.tags)}\n`;
+    frontMatter += `tags: ${JSON.stringify(this.page.tags)}\n`;
 
     if(this.page.cover)
       frontMatter += `cover: ${imageUrl(this.page.cover) || ""}\n`;
@@ -32,13 +33,13 @@ export default class NotionArticleGenerator {
   }
 
   private generateContent() {
-    return blocksToMarkdown(this.page.blocks);
+    return this.page.toMarkdown();
   }
 
   private async generateImages() {
     const images: Promise<void>[] = [];
     for (const block of this.page.blocks) {
-      if (block.type === "image") {
+      if (block instanceof Image) {
         images.push(this.generateImage(block.id, block.image));
       }
     }

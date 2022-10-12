@@ -1,7 +1,7 @@
 import fs from "fs";
-import Notion from "./Notion";
-import NotionArticleGenerator from "./NotionArticleGenerator";
-import Page from "./Page";
+import Notion from "./notion/Notion";
+import NotionArticleGenerator from "./notion/NotionArticleGenerator";
+import Page from "./notion/Page";
 
 export const listDirectories = (source: string) =>
     fs.readdirSync(source, { withFileTypes: true })
@@ -14,8 +14,8 @@ export function toSlug(text: string) {
         .trim()
         .replace(/\s+/g, '-')
         .replace(/[^\w-]+/g, '')
-        .replace(/\-\-+/g, '-')
-        .replace(/\-$/g, '');
+        .replace(/--+/g, '-')
+        .replace(/-$/g, '');
 }
 
 export const notion = new Notion(process.env.GATSBY_NOTION_TOKEN);

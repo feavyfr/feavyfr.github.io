@@ -41,7 +41,7 @@ const IndexPage = ({data}) => {
       <div>
         {articles.map((article) => (
             <div key={article.id}>
-              <Link to={`/articles/${article.frontmatter.slug}`}><h2>{article.frontmatter.title}</h2></Link>
+              <Link to={`/articles/${article.slug}`}><h2>{article.frontmatter.title}</h2></Link>
               <p>{article.excerpt}</p>
             </div>
         ))}
@@ -57,8 +57,8 @@ export const query = graphql`
       nodes {
         id
         excerpt
+        slug
         frontmatter {
-          slug
           title
           tags
           category
