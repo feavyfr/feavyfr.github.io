@@ -24,8 +24,7 @@ header {
     vertical-align: middle;
     width: 130px;
     height: 130px;
-    position: absolute;
-    transform: translateX(-350px);
+    margin-right: 100px;
 }
 
 h1 {
@@ -41,4 +40,5 @@ h1 {
     text-align: center;
 
     color: #3F51B5;
+    padding-right: 230px;
 }
