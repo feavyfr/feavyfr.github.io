@@ -1,10 +1,10 @@
 import {Client} from "@notionhq/client";
-import Page from "./Page";
+import Page from "./blocks/Page";
 import {NotionBlock} from "./NotionTypes";
 import Block from "./blocks/Block";
 import Blocks from "./blocks/Blocks";
 
-export default class Notion {
+export default class NotionAPI {
   private readonly notion: Client;
 
   public constructor(auth?: string) {

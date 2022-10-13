@@ -1,11 +1,11 @@
-import downloadImage from '../image';
-import Page from './Page';
+import downloadImage from '../utils/image';
+import Page from './blocks/Page';
 import fs from "fs";
 import {icon, imageUrl} from "./NotionUtils";
 import Image from "./blocks/Image";
 import {NotionImage} from "./NotionTypes";
 
-export default class NotionArticleGenerator {
+export default class NotionMarkdownGenerator {
   public constructor(private page: Page) { }
 
   private generateFrontMatter() {

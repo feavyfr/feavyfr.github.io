@@ -1,7 +1,7 @@
-import {NotionIcon, NotionImage} from "./NotionTypes";
-import {toSlug} from "../articles";
-import Block from "./blocks/Block";
-import {plaintexts} from "./NotionUtils";
+import {NotionIcon, NotionImage} from "../NotionTypes";
+import {toSlug} from "../../utils/articles";
+import Block from "./Block";
+import {plaintexts} from "../NotionUtils";
 
 export default class Page extends Block {
   created_time: string;

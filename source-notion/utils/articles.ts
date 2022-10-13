@@ -1,7 +1,7 @@
 import fs from "fs";
-import Notion from "./notion/Notion";
-import NotionArticleGenerator from "./notion/NotionArticleGenerator";
-import Page from "./notion/Page";
+import NotionAPI from "../notion/NotionAPI";
+import NotionMarkdownGenerator from "../notion/NotionMarkdownGenerator";
+import Page from "../notion/blocks/Page";
 
 export const listDirectories = (source: string) =>
     fs.readdirSync(source, { withFileTypes: true })
@@ -18,7 +18,7 @@ export function toSlug(text: string) {
         .replace(/-$/g, '');
 }
 
-export const notion = new Notion(process.env.GATSBY_NOTION_TOKEN);
+export const notion = new NotionAPI(process.env.GATSBY_NOTION_TOKEN);
 
 export interface LocalArticle {
     slug: string;
@@ -60,7 +60,7 @@ export function hasUpdate(local: LocalArticle, notion: Page) {
 
 export async function generateArticle(article: Page) {
     await notion.setPageBlocks(article);
-    await new NotionArticleGenerator(article).generate();
+    await new NotionMarkdownGenerator(article).generate();
 }
 
 export async function deleteArticle(article: LocalArticle) {

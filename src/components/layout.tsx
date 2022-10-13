@@ -8,8 +8,8 @@ const Layout: React.FC<{}> = ({ children }) => {
         <main>
             <Helmet htmlAttributes={{lang: "en"}}>
                 <meta charSet="utf-8" />
-                <meta name="description" content="Gatsby Notion" />
-                <title>Home PageGatsby Notion</title>
+                <meta name="description" content="Gatsby NotionAPI" />
+                <title>Home PageGatsby NotionAPI</title>
             </Helmet>
             {children}
         </main>
