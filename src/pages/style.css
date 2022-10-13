@@ -1,0 +1,63 @@
+#articles {
+    display: flex;
+    max-width: 1135px;
+    flex-direction: column;
+}
+
+#articles article {
+    width: 100%;
+    background-color: white;
+    margin-bottom: 2em;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 0 10px -4px rgba(0, 0, 0, 0.1);
+}
+
+article a {
+    text-decoration: none;
+}
+
+article h2 {
+    font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+
+    color: #202020;
+}
+
+article .date {
+    font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    text-transform: uppercase;
+
+    color: #777777;
+}
+
+article .excerpt {
+    font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #888888;
+}
+
+article .read-more {
+    font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+
+    /* Blue 2 */
+    color: #2D9CDB;
+
+    text-transform: uppercase;
+}

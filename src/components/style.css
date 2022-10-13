@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Maven+Pro:wght@400;500;600&family=Montserrat+Alternates:wght@700&display=swap');
+
+body {
+    background-color: #f5f7fb;
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1135px;
+    margin: 0 auto;
+}
+
+header {
+    margin: 2em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#icon {
+    vertical-align: middle;
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    transform: translateX(-350px);
+}
+
+h1 {
+    vertical-align: middle;
+    margin: 0;
+    font-family: 'Lalezar', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 128px;
+    height: 182px;
+    letter-spacing: 0.04em;
+    text-align: center;
+
+    color: #3F51B5;
+}
