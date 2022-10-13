@@ -35,6 +35,11 @@ export default class Page extends Block {
       this.tags = [];
     }
 
+    if(this.properties.created_date.date) {
+      this.created_time = this.properties.created_date.date.start;
+      this.last_edited_time = this.properties.created_date.date.start;
+    }
+
     this.path = `./src/articles/${this.slug}`;
   }
 

@@ -1,6 +1,6 @@
 ---
 created_time: 2022-05-27T10:43:00.000Z
-last_edited_time: 2022-10-12T07:34:00.000Z
+last_edited_time: 2022-10-13T07:01:00.000Z
 slug: article1
 title: Article 1
 category: Category test

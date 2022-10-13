@@ -11,6 +11,7 @@ import Toggle from "./Toggle";
 import ChildPage from "./ChildPage";
 import Image from "./Image";
 import Code from "./Code";
+import DefaultBlock from "./DefaultBlock";
 
 type BlockConstructor<T extends Block, B extends NotionBlock> = new (block: B, children: Block[]) => T;
 
@@ -38,7 +39,7 @@ export default class Blocks {
   public static create(block: NotionBlock, children: Block[]): Block {
     const ctor = Blocks.blocks.get(block.type);
     if(!ctor) {
-      return null;
+      return new DefaultBlock(block, children);
     }
     return new ctor(block, children);
   }
