@@ -23,12 +23,12 @@ article h2 {
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
-    line-height: 16px;
+    line-height: 30px;
 
     color: #202020;
 }
 
-article .date {
+article .date, article .date .edited{
     font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -37,6 +37,13 @@ article .date {
     text-transform: uppercase;
 
     color: #777777;
+}
+
+
+article .date .edited {
+    font-weight: 500;
+    font-size: 13px;
+    padding-left: 10px;
 }
 
 article .excerpt {

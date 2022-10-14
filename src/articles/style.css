@@ -8,13 +8,40 @@ article {
     box-shadow: 0 0 10px -4px rgba(0, 0, 0, 0.1);
 }
 
+article h2 {
+    margin-bottom: 1.5em;
+}
+
 .date {
     font-weight: 500 !important;
 }
 
-.content {
+.content * {
     font-weight: 400;
     line-height: 20px;
     color: #444;
     font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+}
+
+.columns {
+    display: flex;
+    gap: 40px;
+}
+
+.column img {
+    display: inline-block;
+    margin: auto;
+}
+
+p:first-child {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .columns {
+        flex-direction: column;
+    }
+    .column img {
+        max-width: 100%;
+    }
 }

@@ -12,7 +12,7 @@ deckDeckGoHighlightElement();
 export default function ArticlePage({ data }) {
   const { body } = data.mdx;
 
-  const edited = data.mdx.frontmatter.created_time !== data.mdx.frontmatter.last_edited_time;
+  const edited = data.mdx.frontmatter.created_time !== data.mdx.frontmatter.last_edited_time.split(" à")[0];
 
   return (
     <Layout>
@@ -20,7 +20,7 @@ export default function ArticlePage({ data }) {
         <title>Article</title>
       </Helmet>
       <article>
-        <span className="date">{data.mdx.frontmatter.created_time}{edited && `, modifié le ${data.mdx.frontmatter.last_edited_time}`}</span>
+        <span className="date">{data.mdx.frontmatter.created_time}{edited && <span className="edited"> modifié le {data.mdx.frontmatter.last_edited_time}</span>}</span>
         <h2>{data.mdx.frontmatter.title}</h2>
         <div className="content">
           <MDXRenderer>{body}</MDXRenderer>
