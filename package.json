@@ -9,7 +9,6 @@
   ],
   "scripts": {
     "fetch": "ts-node ./source-notion/index.ts",
-    "preinstall": "bash netlify-setup.sh",
     "dev": "gatsby develop",
     "start": "gatsby develop",
     "prod": "yarn fetch && yarn build",
