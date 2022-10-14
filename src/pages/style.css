@@ -1,6 +1,6 @@
 #articles {
     display: flex;
-    max-width: 1135px;
+    width: 100%;
     flex-direction: column;
 }
 
