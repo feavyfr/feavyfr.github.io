@@ -11,6 +11,6 @@ export default class Code extends Block {
 
   public toMarkdown(): string {
 
-    return `\`\`\`${this.block.code.language}\n${texts(this.block.code.rich_text)}\n\`\`\`\n`;
+    return `\`\`\`${this.block.code.language.replace("plain text", "")}\n${texts(this.block.code.rich_text)}\n\`\`\`\n`;
   }
 }
