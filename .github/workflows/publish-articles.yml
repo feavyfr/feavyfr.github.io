@@ -25,4 +25,4 @@ jobs:
           commit_message: Update articles
           commit_user_name: github-action
           commit_user_email: github-action
-          commit_author: github-action
+          commit_author: github-action <github-action>
