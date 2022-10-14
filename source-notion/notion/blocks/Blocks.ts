@@ -12,6 +12,7 @@ import ChildPage from "./ChildPage";
 import Image from "./Image";
 import Code from "./Code";
 import DefaultBlock from "./DefaultBlock";
+import ColumnList from "./ColumnList";
 
 type BlockConstructor<T extends Block, B extends NotionBlock> = new (block: B, children: Block[]) => T;
 
@@ -30,6 +31,7 @@ export default class Blocks {
     Blocks.register("child_page", ChildPage);
     Blocks.register("image", Image);
     Blocks.register("code", Code);
+    Blocks.register("column_list", ColumnList);
   }
 
   private static register(type: string, block: BlockConstructor<any, any>) {
@@ -39,6 +41,7 @@ export default class Blocks {
   public static create(block: NotionBlock, children: Block[]): Block {
     const ctor = Blocks.blocks.get(block.type);
     if(!ctor) {
+      console.log("Unknown block type: " + block.type);
       return new DefaultBlock(block, children);
     }
     return new ctor(block, children);
