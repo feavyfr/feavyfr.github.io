@@ -1,5 +1,4 @@
 import { deleteArticle, generateArticle, getLocalArticles, getNotionArticles, hasUpdate } from "./utils/articles";
-import { commitAll, push } from "./utils/git";
 
 (async () => {
     const [notionArticles, localArticles] = await Promise.all([getNotionArticles("80035349b4bb4c16b89af4f3db64f97e"), getLocalArticles()]);
@@ -36,11 +35,5 @@ import { commitAll, push } from "./utils/git";
 
     await Promise.all(promises);
 
-    try {
-        await commitAll();
-        await push();
-    }catch (e) {
-        console.log("Didn't not commit.", e);
-    }
     console.log("DONE");
 })();
