@@ -7,7 +7,7 @@
 #articles article {
     width: 100%;
     background-color: white;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     padding: 1em;
     box-sizing: border-box;
     border-radius: 5px;
@@ -67,4 +67,30 @@ article .read-more {
     color: #2D9CDB;
 
     text-transform: uppercase;
+}
+
+.head {
+    display: flex;
+}
+
+.tag {
+    font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+
+    color: #fff;
+    background-color: #42a5f5;
+    padding: .33em .8em;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+    margin-left: 1em;
+}
+
+.tags {
+    flex-grow: 1;
+    vertical-align: middle;
+    text-align: right;
 }

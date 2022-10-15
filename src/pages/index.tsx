@@ -24,7 +24,16 @@ const IndexPage = ({data}) => {
       <div id="articles">
         {articles.map((article) => (
             <article key={article.id}>
-              <span className="date">{article.frontmatter.created_time}</span>
+              <div className="head">
+                <span className="date">{article.frontmatter.created_time}</span>
+                <div className="tags">
+                  {article.frontmatter.tags.map((tag) => (
+                    // <Link to={`/tags/${tag}`} key={tag}>
+                      <span className="tag">{tag}</span>
+                    // </Link>
+                  ))}
+                </div>
+              </div>
               <Link to={`/articles/${article.slug}`}><h2>{article.frontmatter.title}</h2></Link>
               <p className="excerpt">{article.excerpt}</p>
               <Link to={`/articles/${article.slug}`} className="read-more">Lire la suite</Link>
