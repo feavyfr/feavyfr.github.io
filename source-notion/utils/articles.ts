@@ -37,6 +37,7 @@ export async function getLocalArticles() {
             }
             const stream = fs.createReadStream(`./src/articles/${slug}/index.md`, { encoding: "utf-8", start: 0, end: 200 });
             stream.on("data", (data: string) => {
+                stream.close();
                 const last_edited_time = data.split("last_edited_time: ")[1].split(/\r?\n/)[0];
                 articles.set(slug, { slug, last_edited_time });
                 resolve();
