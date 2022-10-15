@@ -13,7 +13,7 @@ export default class NotionMarkdownGenerator {
     frontMatter += `created_time: ${this.page.created_time}\n`;
     frontMatter += `last_edited_time: ${this.page.last_edited_time}\n`;
     frontMatter += `slug: ${this.page.slug}\n`;
-    frontMatter += `title: ${this.page.title}\n`;
+    frontMatter += `title: "${this.page.title.replace('"', '\\"')}"\n`;
 
     if(this.page.category)  
       frontMatter += `category: ${this.page.category}\n`;
