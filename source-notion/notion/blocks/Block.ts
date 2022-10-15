@@ -13,4 +13,10 @@ export default abstract class Block {
   }
 
   public abstract toMarkdown(): string;
+
+  public visitDeep(visitor: (block) => void) {
+    visitor(this);
+    this.children.forEach(child => child.visitDeep(visitor));
+  }
+
 }

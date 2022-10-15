@@ -38,11 +38,11 @@ export default class NotionMarkdownGenerator {
 
   private async generateImages() {
     const images: Promise<void>[] = [];
-    for (const block of this.page.blocks) {
+    this.page.visitDeep(block => {
       if (block instanceof Image) {
         images.push(this.generateImage(block.id, block.image));
       }
-    }
+    });
     await Promise.all(images);
   }
 
