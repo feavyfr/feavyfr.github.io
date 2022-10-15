@@ -1,4 +1,4 @@
-import {NotionIcon, NotionImage, NotionRichText} from "./NotionTypes";
+import {NotionIcon, NotionImage, NotionImageFile, NotionRichText} from "./NotionTypes";
 
 function text(block: NotionRichText): string {
   let text = block.plain_text;
@@ -33,7 +33,7 @@ export function plaintexts(blocks: NotionRichText[], indent = ""): string {
   return `${indent}${blocks.map(plaintext).join("")}`;
 }
 
-export function imageUrl(image: NotionImage) {
+export function imageUrl(image: NotionImageFile) {
   if (!image) return null;
   return image.type === "external" ? image.external.url : image.file.url;
 }

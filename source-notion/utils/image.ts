@@ -2,6 +2,8 @@ import fs from "fs";
 import downloadFile from "download";
 import imageType from "image-type";
 
+import sizeOf from "image-size";
+
 export default async function downloadImage(url: string, dir: string, filename: string) {
     const data = await downloadFile(url);
     if (!data) {
@@ -10,6 +12,13 @@ export default async function downloadImage(url: string, dir: string, filename: 
     const ext = imageType(data)!.ext;
 
     fs.writeFileSync(`${dir}/${filename}.${ext}`, data);
+    const dimensions = sizeOf(`${dir}/${filename}.${ext}`);
+
     console.log(`Successfully downloaded ${dir}/${filename}.${ext}`);
-    return `${filename}.${ext}`;
+
+    return {
+        path: `${filename}.${ext}`,
+        width: dimensions.width,
+        height: dimensions.height,
+    }
 }

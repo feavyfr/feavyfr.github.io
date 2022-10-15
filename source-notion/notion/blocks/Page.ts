@@ -1,4 +1,4 @@
-import {NotionIcon, NotionImage} from "../NotionTypes";
+import {NotionIcon, NotionImage, NotionImageFile} from "../NotionTypes";
 import {toSlug} from "../../utils/articles";
 import Block from "./Block";
 import {plaintexts} from "../NotionUtils";
@@ -14,7 +14,7 @@ export default class Page extends Block {
   category: string;
   path: string;
   icon?: NotionIcon;
-  cover?: NotionImage;
+  cover?: NotionImageFile;
 
   public constructor(page: any) {
     super(page,  [])

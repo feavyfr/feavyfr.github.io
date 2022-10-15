@@ -3,7 +3,7 @@ import Page from './blocks/Page';
 import fs from "fs";
 import {icon, imageUrl} from "./NotionUtils";
 import Image from "./blocks/Image";
-import {NotionImage} from "./NotionTypes";
+import {NotionImageFile} from "./NotionTypes";
 
 export default class NotionMarkdownGenerator {
   public constructor(private page: Page) { }
@@ -46,10 +46,12 @@ export default class NotionMarkdownGenerator {
     await Promise.all(images);
   }
 
-  private async generateImage(name: string, block: NotionImage): Promise<void> {
+  private async generateImage(name: string, block: NotionImageFile): Promise<void> {
     const image = block.type === "file" ? block.file : block.external;
-    await downloadImage(image.url, `${this.page.path}/images`, name).then(path => {
-      image.url = `./images/${path}`;
+    await downloadImage(image.url, `${this.page.path}/images`, name).then(data => {
+      image.url = `./images/${data.path}`;
+      block.width = data.width;
+      block.height = data.height;
     });
   }
 
