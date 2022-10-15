@@ -30,7 +30,7 @@ export default function ArticlePage({ data }) {
             ))}
           </div>
         </div>
-        <h2>{data.mdx.frontmatter.title}</h2>
+        <h2 className="title">{data.mdx.frontmatter.title}</h2>
         <div className="content">
           <MDXRenderer>{body}</MDXRenderer>
         </div>

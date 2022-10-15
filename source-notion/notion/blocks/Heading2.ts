@@ -10,6 +10,6 @@ export default class Heading2 extends Block {
   }
 
   public toMarkdown(): string {
-    return `## ${texts(this.block.heading_2.rich_text)}\n`;
+    return `### ${texts(this.block.heading_2.rich_text)}\n`;
   }
 }

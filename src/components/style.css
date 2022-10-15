@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Maven+Pro:wght@400;500;600&family=Montserrat+Alternates:wght@700&display=swap');
 
+* {
+    font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+}
+
 body {
     background-color: #f5f7fb;
 }
@@ -30,7 +34,6 @@ header {
 h1 {
     vertical-align: middle;
     margin: 0;
-    font-family: 'Lalezar', Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     font-style: normal;
     font-weight: 400;
@@ -41,4 +44,8 @@ h1 {
 
     color: #3F51B5;
     padding-right: 230px;
+}
+
+h1  {
+    font-family: 'Lalezar', Arial, Helvetica, sans-serif;
 }
