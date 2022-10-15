@@ -1,6 +1,6 @@
 ---
 created_time: 2022-10-14T20:31:00.000Z
-last_edited_time: 2022-10-14T21:21:00.000Z
+last_edited_time: 2022-10-14T21:42:00.000Z
 slug: heberger-un-site-gratuitement-en-tant-quetudiant-grace-a-microsoft-azure
 title: Héberger un site gratuitement en tant qu’étudiant grâce à Microsoft Azure
 tags: []
@@ -18,7 +18,7 @@ C’est la qu’intervient ce tuto !! Puisque dans celui-ci on va voir la soluti
 <div class="columns">
 <div class="column">
 
-![image](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0a540243-b08c-4b20-bdc1-fb0ff2489cd1/image_25.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221014%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221014T212901Z&X-Amz-Expires=3600&X-Amz-Signature=812ef71e5d4bea06e722d3f1d68fce73750bf4057f256cc63d722cb4c23d9185&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0a540243-b08c-4b20-bdc1-fb0ff2489cd1/image_25.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221014%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221014T214457Z&X-Amz-Expires=3600&X-Amz-Signature=1a0ac6fcb2d97c52a3d8a1b8faed53db92356b9dff914e94e2dcb57c1c283751&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 </div>
 <div class="column">
@@ -204,13 +204,13 @@ Après avoir installé WordPress vous avez peut-être, comme moi, essayé de mod
 
 Éditez le fichier */etc/apache2/apache2.conf* :
 
-```plain text
+```bash
 nano /etc/apache2/apache2.conf
 ```
 
 Rajoutez-y le contenu suivant :
 
-```plain text
+```
 <Directory /var/www/html>
         Options FollowSymLinks
         AllowOverride All
@@ -223,9 +223,9 @@ Et voilà ! Les permaliens fonctionneront correctement à présent.
 
 Pour cette étape rendez-vous dans le panneau de configuration DNS de l’autorité qui a enregistré votre nom de domaine. Vous devrez simplement y ajouter les enregistrement de type A suivants :
 
-```plain text
-[votre domaine].        1 	IN	A	[IP publique de la VM]
-www.[votre domaine].	  1  	IN	A	[IP publique de la VM]
+```
+[votre domaine].        1   IN  A [IP publique de la VM]
+www.[votre domaine].    1   IN  A [IP publique de la VM]
 ```
 
 Patientez un peu le temps que les changements soient pris en compte. Votre site devrait ensuite être accessible directement en tapant votre nom de domaine. Si vous ne possédez pas de nom de domaine il existe [des sites](https://www.freenom.com/fr/index.html?lang=fr) qui vous en fournissent gratuitement.
