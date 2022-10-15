@@ -1,9 +1,10 @@
 ---
-created_time: 2022-10-14T20:31:00.000Z
-last_edited_time: 2022-10-14T21:42:00.000Z
+created_time: 2020-04-05
+last_edited_time: 2020-04-05
 slug: heberger-un-site-gratuitement-en-tant-quetudiant-grace-a-microsoft-azure
 title: Héberger un site gratuitement en tant qu’étudiant grâce à Microsoft Azure
 tags: []
+icon_image: ./images/icon.png
 ---
 
 
@@ -18,7 +19,7 @@ C’est la qu’intervient ce tuto !! Puisque dans celui-ci on va voir la soluti
 <div class="columns">
 <div class="column">
 
-![image](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0a540243-b08c-4b20-bdc1-fb0ff2489cd1/image_25.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221014%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221014T214457Z&X-Amz-Expires=3600&X-Amz-Signature=1a0ac6fcb2d97c52a3d8a1b8faed53db92356b9dff914e94e2dcb57c1c283751&X-Amz-SignedHeaders=host&x-id=GetObject)
+![image](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0a540243-b08c-4b20-bdc1-fb0ff2489cd1/image_25.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221015%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221015T111051Z&X-Amz-Expires=3600&X-Amz-Signature=1f3b9ab08219850b5c771a9519059501de78dc8f6abc1d4135c5a9703c48d607&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 </div>
 <div class="column">
@@ -196,7 +197,7 @@ Je vous laisse donc installer WordPress. Notez la configuration de la base de do
 
 * Base de données : wordpress
 
-**Aparté : Comment supprimer *****index.php***** de l’URL des permaliens de vos articles ?**
+**Aparté : **Comment supprimer `index.php` de l’URL des permaliens de vos articles ?
 
 ![image](./images/af79058b-1beb-4c50-b882-ccd7d285319d.png)
 
