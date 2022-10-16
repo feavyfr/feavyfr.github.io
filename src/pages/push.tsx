@@ -3,11 +3,10 @@ import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
 
 const PushPage = () => {
-  const [token, setToken] = React.useState(localStorage.getItem("token") || "");
+  const [token, setToken] = React.useState((typeof window !== "undefined" && localStorage.getItem("token")) || "");
   const [message, setMessage] = React.useState("")
 
   async function pushArticles() {
-    alert(token);
     const rep = await fetch("https://api.github.com/repos/Feavy/feavyfr/actions/workflows/publish-articles.yml/dispatches", {
       method: "POST",
       headers: {
