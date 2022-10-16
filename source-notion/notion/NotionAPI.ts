@@ -23,9 +23,13 @@ export default class NotionAPI {
     page.blocks = await this.getBlocks(page.id);
   }
 
-  public async getBlocks(page_id: string): Promise<Block[]> {
-    const response = await this.notion.blocks.children.list({block_id: page_id, page_size: 100});
+  public async getBlocks(block_id: string): Promise<Block[]> {
+    let response = await this.notion.blocks.children.list({block_id: block_id, page_size: 100});
     const blocks: NotionBlock[] = response.results.filter(block => "type" in block) as NotionBlock[];
+    while(response.has_more) {
+      response = await this.notion.blocks.children.list({block_id: block_id, page_size: 100, start_cursor: response.next_cursor});
+      blocks.push(...response.results.filter(block => "type" in block) as NotionBlock[]);
+    }
     return Promise.all(
         blocks.map(
             async (block): Promise<Block> => Blocks.create(block, block.has_children ? await this.getBlocks(block.id) : [])
