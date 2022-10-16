@@ -36,7 +36,7 @@ const PushPage = () => {
         <Helmet>
           <title>Push articles</title>
         </Helmet>
-        <input type="password" id="token" placeholder="GitHub token" value={token} onChange={updateToken}/>
+        <input type="password" id="token" placeholder="GitHub token" value={token} onInput={updateToken}/>
         <button onClick={pushArticles}>PUSH</button>
         <p>{message}</p>
       </Layout>
