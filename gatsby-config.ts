@@ -1,4 +1,4 @@
-import type { GatsbyConfig } from "gatsby";
+import type {GatsbyConfig} from "gatsby";
 import templates from "./templates";
 
 const templateSources = Object.entries(templates).map(([name, template]) => ({
@@ -34,10 +34,16 @@ const config: GatsbyConfig = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1200,
+              maxWidth: 1024,
               showCaptions: ['title']
             },
           },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+            },
+          }
         ]
       }
     },
