@@ -1,6 +1,6 @@
 ---
 created_time: 2022-10-15T11:31:00.000Z
-last_edited_time: 2022-10-15T14:49:00.000Z
+last_edited_time: 2022-10-16T00:53:00.000Z
 slug: devblog-chibiland-1-presentation-et-technologies
 title: "Devblog Chibiland #1 – Présentation et technologies"
 tags: ["Chibiland"]
@@ -27,7 +27,6 @@ Au départ j’avais très peu d’ambition avec ce projet. En fait l’idée de
 
 Je n’avais vraiment pas été cherché très loin dans le concept, comme le prouvent ces premières images du jeu :
 
-
 <div class="columns">
 <div class="column" style="flex-grow: 1">
 
@@ -36,7 +35,7 @@ Je n’avais vraiment pas été cherché très loin dans le concept, comme le pr
 </div>
 <div class="column" style="flex-grow: 1">
 
-![image](./images/29899460-5fa3-4ddf-990e-e5eefc02f111.png)
+![image](./images/eb0657c8-4d9a-41cd-88cc-5a398d147a1a.gif)
 
 </div>
 </div>
