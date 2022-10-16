@@ -46,3 +46,33 @@ p:first-child {
         max-width: 100%;
     }
 }
+
+.table-of-contents {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 1em;
+    border-radius: 4px;
+}
+
+.table-of-contents .index {
+    padding-right: .5em;
+}
+
+.table-of-contents > ol {
+    padding-left: 0;
+}
+
+.table-of-contents p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.table-of-contents li {
+    list-style: none;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.table-of-contents a {
+    color: #666;
+}

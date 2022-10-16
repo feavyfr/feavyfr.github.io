@@ -24,7 +24,7 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
-        gatsbyRemarkPlugins: ["gatsby-remark-unwrap-images",
+        gatsbyRemarkPlugins: ["gatsby-remark-unwrap-images", "gatsby-remark-autolink-headers",
           {
             resolve: "gatsby-remark-highlight-code",
             options: {

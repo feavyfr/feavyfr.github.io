@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Maven+Pro:wght@400;500;600&family=Montserrat+Alternates:wght@700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     font-family: 'Maven Pro', Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #42a5f5;
 }
 
 body {

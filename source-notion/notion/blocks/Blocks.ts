@@ -13,6 +13,7 @@ import Image from "./Image";
 import Code from "./Code";
 import DefaultBlock from "./DefaultBlock";
 import ColumnList from "./ColumnList";
+import TableOfContents from "./TableOfContents";
 
 type BlockConstructor<T extends Block, B extends NotionBlock> = new (block: B, children: Block[]) => T;
 
@@ -32,6 +33,7 @@ export default class Blocks {
     Blocks.register("image", Image);
     Blocks.register("code", Code);
     Blocks.register("column_list", ColumnList);
+    Blocks.register("table_of_contents", TableOfContents);
   }
 
   private static register(type: string, block: BlockConstructor<any, any>) {

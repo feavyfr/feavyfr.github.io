@@ -32,7 +32,7 @@ export default function ArticlePage({ data }) {
         </div>
         <h2 className="title">{data.mdx.frontmatter.title}</h2>
         <div className="content">
-          <MDXRenderer>{body}</MDXRenderer>
+          <MDXRenderer tableOfContents={data.mdx.tableOfContents}>{body}</MDXRenderer>
         </div>
       </article>
     </Layout>
@@ -44,6 +44,7 @@ export const query = graphql`
     mdx(id: {eq: $id}) {
       id
       slug
+      tableOfContents
       body
       frontmatter {
         title
