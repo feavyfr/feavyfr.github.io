@@ -1,8 +1,8 @@
 ---
 created_time: 2022-07-14
 last_edited_time: 2022-07-14
-slug: devblog-chibiland-2-la-refonte-de-linterface-avec-solidjs
-title: "Devblog Chibiland #2 La refonte de l’interface avec SolidJS"
+slug: devblog-chibiland-3-la-refonte-de-linterface-avec-solidjs
+title: "Devblog Chibiland #3 – La refonte de l’interface avec SolidJS"
 tags: ["Chibiland"]
 ---
 import TableOfContents from "../../components/TableOfContents";
@@ -50,7 +50,7 @@ La carte de joueur a aussi été refaite pour se rapprocher du style de Club Pen
 </div>
 <div class="column" style="flex-grow: 1">
 
-### APR**ÈS**
+### APRÈS
 
 ![image](./images/d8ec94c8-69f2-4958-92ea-a08314c3cdeb.png)
 
