@@ -53,8 +53,30 @@ h1 {
 
     color: #3F51B5;
     padding-right: 230px;
+    font-family: 'Lalezar', Arial, Helvetica, sans-serif;
 }
 
-h1  {
-    font-family: 'Lalezar', Arial, Helvetica, sans-serif;
+@media screen and (max-width: 850px) {
+    #icon {
+        width: 120px;
+        height: 120px;
+        margin-right: 2em;
+    }
+
+    h1 {
+        font-size: 120px;
+        height: 160px;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    #icon {
+        display: none;
+    }
+
+    h1 {
+        font-size: 90px;
+        height: 120px;
+    }
 }
