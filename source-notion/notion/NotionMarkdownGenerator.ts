@@ -15,9 +15,6 @@ export default class NotionMarkdownGenerator {
     frontMatter += `slug: ${this.page.slug}\n`;
     frontMatter += `title: "${this.page.title.replace('"', '\\"')}"\n`;
 
-    if(this.page.category)  
-      frontMatter += `category: ${this.page.category}\n`;
-    
     frontMatter += `tags: ${JSON.stringify(this.page.tags)}\n`;
 
     if(this.page.cover)

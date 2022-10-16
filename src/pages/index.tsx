@@ -11,7 +11,6 @@ interface Article {
     title: string;
     created_time: string;
     tags: string[];
-    category: string;
   }
   excerpt: string;
 }
@@ -55,7 +54,6 @@ export const query = graphql`
         frontmatter {
           title
           tags
-          category
           created_time(formatString: "DD MMMM YYYY", locale: "fr")
         }
       }

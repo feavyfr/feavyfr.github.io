@@ -11,7 +11,6 @@ export default class Page extends Block {
   slug: string;
   title: string;
   tags: string[];
-  category: string;
   path: string;
   icon?: NotionIcon;
   cover?: NotionImageFile;
@@ -25,9 +24,6 @@ export default class Page extends Block {
       this.slug = plaintexts(this.properties.slug.rich_text);
     } else {
       this.slug = toSlug(this.title);
-    }
-    if (this.properties.category?.select) {
-      this.category = this.properties.category.select.name;
     }
     if (this.properties.tags?.multi_select) {
       this.tags = this.properties.tags.multi_select.map(select => select.name);
