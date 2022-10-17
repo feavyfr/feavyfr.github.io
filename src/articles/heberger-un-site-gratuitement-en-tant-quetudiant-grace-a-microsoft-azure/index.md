@@ -31,8 +31,6 @@ C’est la qu’intervient ce tuto !! Puisque dans celui-ci on va voir la soluti
 
 Attention, je tiens à préciser que cette technique n’est avantageuse **que si vous êtes étudiants**. Si ce n’est pas le cas vous allez vous retrouver à payer un prix excessif pour un simple site WordPress.
 
-
-
 </div>
 </div>
 
@@ -69,14 +67,12 @@ Vous pouvez laisser les autres parties inchangées. A noter qu’on vous demande
 Vous pouvez ensuite lancer le déploiement et attendre qu’il se termine…
 
 <div class="columns">
-<div class="column">
+<div class="column column-icon">
 
 <div class="notion-image" style="width: 118px; height: 118px;">
 
 ![image](./images/814423ae-c4f9-48b3-9f49-0cb2b12b8f99.png)
 </div>
-
-
 
 </div>
 <div class="column">
