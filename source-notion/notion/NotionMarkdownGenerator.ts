@@ -54,7 +54,8 @@ export default class NotionMarkdownGenerator {
 
   private generateImports() {
     let content = "";
-    content += `import TableOfContents from "../../components/TableOfContents";\n\n`;
+    content += `import TableOfContents from "../../components/TableOfContents";\n`;
+    content += "\n";
     return content;
   }
 

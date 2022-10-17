@@ -27,20 +27,23 @@ article .title {
 .columns {
     display: flex;
     gap: 40px;
+    margin-bottom: 1em;
 }
 
-.column img {
-    display: inline-block;
-    margin: auto;
+.column {
+    flex-grow: 1;
 }
 
-p:first-child {
-    margin-top: 0;
+.column-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
     .columns {
         flex-direction: column;
+        gap: 20px;
     }
     .column img {
         max-width: 100%;
