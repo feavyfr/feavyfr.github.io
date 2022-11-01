@@ -1,3 +1,6 @@
+import * as dotenv from "dotenv"
+dotenv.config()
+
 import { deleteArticle, generateArticle, getLocalArticles, getNotionArticles, hasUpdate } from "./utils/articles";
 
 (async () => {
