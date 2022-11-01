@@ -28,7 +28,7 @@ const IndexPage = ({data}) => {
                 <div className="tags">
                   {article.frontmatter.tags.map((tag) => (
                     // <Link to={`/tags/${tag}`} key={tag}>
-                      <span className="tag">{tag}</span>
+                      <span className="tag" key={tag}>{tag}</span>
                     // </Link>
                   ))}
                 </div>

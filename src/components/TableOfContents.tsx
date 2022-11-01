@@ -15,7 +15,7 @@ function generateTOC(toc: TOC, prefix: string = "") {
   return (
       <ol>
         {toc.items.map((item, i) => (
-            <li>
+            <li key={item.title}>
               <a href={item.url}><span className="index">{prefix+(i+1)}</span> {item.title}</a>
               {generateTOC(item, prefix+(i+1)+".")}
             </li>
