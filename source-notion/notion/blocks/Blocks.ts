@@ -16,6 +16,7 @@ import ColumnList from "./ColumnList";
 import TableOfContents from "./TableOfContents";
 import LinkPreview from "./LinkPreview";
 import Bookmark from "./Bookmark";
+import LinkToPage from "./LinkToPage";
 
 type BlockConstructor<T extends Block, B extends NotionBlock> = new (block: B, children: Block[]) => T;
 
@@ -37,6 +38,7 @@ export default class Blocks {
     Blocks.register("column_list", ColumnList);
     Blocks.register("table_of_contents", TableOfContents);
     Blocks.register("link_preview", LinkPreview);
+    Blocks.register("link_to_page", LinkToPage);
     Blocks.register("bookmark", Bookmark);
   }
 

@@ -3,10 +3,11 @@ import Page from './blocks/Page';
 import fs from "fs";
 import {icon, imageUrl} from "./NotionUtils";
 import Image from "./blocks/Image";
-import {NotionImageFile} from "./NotionTypes";
+import {NotionImageFile, NotionRichText} from "./NotionTypes";
+import ArticleList from "../articles/ArticleList";
 
 export default class NotionMarkdownGenerator {
-  public constructor(private page: Page) { }
+  public constructor(private page: Page, private articles: ArticleList) { }
 
   private generateFrontMatter() {
     let frontMatter = "---\n";
@@ -29,8 +30,23 @@ export default class NotionMarkdownGenerator {
     return frontMatter;
   }
 
+  private processLinks(links: NotionRichText[]) {
+    for (const link of links) {
+      const href = link.href;
+      if (href.startsWith("https://www.notion.so/")) {
+        const id = href.substring(href.length - 32, href.length);
+        if (id) {
+          const page = this.articles.get(id);
+          if (page) {
+            link.href = `/articles/${page.slug}`;
+          }
+        }
+      }
+    }
+  }
+
   private generateContent() {
-    return this.page.toMarkdown();
+    return this.page.toMarkdown(this.articles);
   }
 
   private async generateImages() {
@@ -61,6 +77,10 @@ export default class NotionMarkdownGenerator {
     if (this.page.icon && this.page.icon.type !== "emoji") {
       await this.generateImage("icon", { ...this.page.icon, caption: null });
     }
+
+    const links = this.page.getLinks();
+    this.processLinks(links);
+
     const content = this.generateFrontMatter() + this.generateContent();
     fs.writeFileSync(`${this.page.path}/index.md`, content);
   }

@@ -1,7 +1,8 @@
-import {NotionIcon, NotionImage, NotionImageFile} from "../NotionTypes";
-import {toSlug} from "../../utils/articles";
+import {NotionIcon, NotionImage, NotionImageFile, NotionRichText} from "../NotionTypes";
 import Block from "./Block";
 import {plaintexts} from "../NotionUtils";
+import {toSlug} from "../../articles/utils";
+import ArticleList from "../../articles/ArticleList";
 
 export default class Page extends Block {
   created_time: string;
@@ -39,6 +40,20 @@ export default class Page extends Block {
     this.path = `./src/articles/${this.slug}`;
   }
 
+  public getLinks(): NotionRichText[] {
+    const links = [];
+    this.visitDeep(block => {
+      if(block.internal[block.type]?.rich_text) {
+        for(const richText of block.internal[block.type].rich_text) {
+          if (richText.href) {
+            links.push(richText);
+          }
+        }
+      }
+    });
+    return links;
+  }
+
   public set blocks(blocks: Block[]) {
     this.children.push(...blocks);
   }
@@ -47,7 +62,7 @@ export default class Page extends Block {
     return this.children;
   }
 
-  public toMarkdown() {
-    return this.childrenToMarkdown();
+  public toMarkdown(articles: ArticleList) {
+    return this.childrenToMarkdown(articles);
   }
 };

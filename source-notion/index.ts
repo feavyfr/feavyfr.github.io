@@ -1,16 +1,19 @@
 import * as dotenv from "dotenv"
 dotenv.config()
 
-import { deleteArticle, generateArticle, getLocalArticles, getNotionArticles, hasUpdate } from "./utils/articles";
+import { deleteArticle, generateArticle, getLocalArticles, getNotionArticles, hasUpdate } from "./articles";
+import ArticleList from "./articles/ArticleList";
 
 (async () => {
     const [notionArticles, localArticles] = await Promise.all([getNotionArticles("80035349b4bb4c16b89af4f3db64f97e"), getLocalArticles()]);
 
     const promises: Promise<any>[] = [];
 
+    const articles: ArticleList = new ArticleList([...notionArticles.values()]);
+
     for (const [_, notion] of notionArticles) {
         if (!localArticles.has(notion.slug)) {
-            const p = generateArticle(notion);
+            const p = generateArticle(notion, articles);
             promises.push(p);
             console.log("CREATE article: " + notion.slug);
             continue;
@@ -21,7 +24,7 @@ import { deleteArticle, generateArticle, getLocalArticles, getNotionArticles, ha
         if (hasUpdate(local, notion)) {
             console.log("UPDATE article: " + notion.slug);
             const p = deleteArticle(local)
-                        .then(() => generateArticle(notion));
+                        .then(() => generateArticle(notion, articles));
             promises.push(p);
             continue;
         }

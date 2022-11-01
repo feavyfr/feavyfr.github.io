@@ -2,28 +2,11 @@ import fs from "fs";
 import NotionAPI from "../notion/NotionAPI";
 import NotionMarkdownGenerator from "../notion/NotionMarkdownGenerator";
 import Page from "../notion/blocks/Page";
-
-export const listDirectories = (source: string) =>
-    fs.readdirSync(source, { withFileTypes: true })
-        .filter(dirent => dirent.isDirectory())
-        .map(dirent => dirent.name);
-
-export function toSlug(text: string) {
-    return text.normalize('NFKD')
-        .toLowerCase()
-        .trim()
-        .replace(/\s+/g, '-')
-        .replace(/[^\w-]+/g, '')
-        .replace(/--+/g, '-')
-        .replace(/-$/g, '');
-}
+import LocalArticle from "./LocalArticle";
+import {listDirectories} from "./utils";
+import ArticleList from "./ArticleList";
 
 export const notion = new NotionAPI(process.env.GATSBY_NOTION_TOKEN);
-
-export interface LocalArticle {
-    slug: string;
-    last_edited_time: string;
-}
 
 export async function getLocalArticles() {
     const slugs = listDirectories("./src/articles");
@@ -59,9 +42,9 @@ export function hasUpdate(local: LocalArticle, notion: Page) {
     return local.last_edited_time !== notion.last_edited_time;
 }
 
-export async function generateArticle(article: Page) {
+export async function generateArticle(article: Page, articles: ArticleList) {
     await notion.setPageBlocks(article);
-    await new NotionMarkdownGenerator(article).generate();
+    await new NotionMarkdownGenerator(article, articles).generate();
 }
 
 export async function deleteArticle(article: LocalArticle) {
