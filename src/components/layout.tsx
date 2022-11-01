@@ -4,6 +4,11 @@ import { Helmet } from 'react-helmet';
 import "./style.css";
 import icon from "../images/icon.png";
 import {Link} from "gatsby";
+import {MDXProvider} from "@mdx-js/react";
+import TableOfContents from "./TableOfContents";
+import LinkPreview from "./LinkPreview";
+
+const shortcodes = { TableOfContents, LinkPreview };
 
 // markup
 const Layout: React.FC<{}> = ({ children }) => {
@@ -20,7 +25,9 @@ const Layout: React.FC<{}> = ({ children }) => {
               <h1>Feavy</h1>
             </header>
           </Link>
-          {children}
+          <MDXProvider components={shortcodes}>
+            {children}
+          </MDXProvider>
         </main>
     )
 }

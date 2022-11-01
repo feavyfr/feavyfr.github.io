@@ -52,13 +52,6 @@ export default class NotionMarkdownGenerator {
     });
   }
 
-  private generateImports() {
-    let content = "";
-    content += `import TableOfContents from "../../components/TableOfContents";\n`;
-    content += "\n";
-    return content;
-  }
-
   public async generate() {
     fs.mkdirSync(`${this.page.path}/images`, { recursive: true });
     await this.generateImages();
@@ -68,7 +61,7 @@ export default class NotionMarkdownGenerator {
     if (this.page.icon && this.page.icon.type !== "emoji") {
       await this.generateImage("icon", { ...this.page.icon, caption: null });
     }
-    const content = this.generateFrontMatter() + this.generateImports() + this.generateContent();
+    const content = this.generateFrontMatter() + this.generateContent();
     fs.writeFileSync(`${this.page.path}/index.md`, content);
   }
 
