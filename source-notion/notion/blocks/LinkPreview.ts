@@ -1,10 +1,10 @@
-import Block from "./Block";
+import AbstractBlock from "./AbstractBlock";
 import {NotionBlock} from "../NotionTypes";
 
 export type NotionLinkPreview = Extract<NotionBlock, { type: 'link_preview' }>;
 
-export default class LinkPreview extends Block {
-  constructor(private readonly block: NotionLinkPreview, children: Block[]) {
+export default class LinkPreview extends AbstractBlock {
+  constructor(private readonly block: NotionLinkPreview, children: AbstractBlock[]) {
     super(block, children);
   }
 

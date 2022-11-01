@@ -1,11 +1,11 @@
-import Block from "./Block";
+import AbstractBlock from "./AbstractBlock";
 import {NotionBlock, NotionImage} from "../NotionTypes";
 import {imageUrl, plaintexts} from "../NotionUtils";
 
-export default class Image extends Block {
+export default class Image extends AbstractBlock {
   public declare image: NotionImage["image"];
 
-  constructor(private readonly block: NotionImage, children: Block[]) {
+  constructor(private readonly block: NotionImage, children: AbstractBlock[]) {
     super(block, children);
   }
 

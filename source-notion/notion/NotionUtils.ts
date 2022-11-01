@@ -1,9 +1,27 @@
-import {NotionIcon, NotionImage, NotionImageFile, NotionRichText} from "./NotionTypes";
+import {NotionIcon, NotionImageFile, NotionRichText} from "./NotionTypes";
+import ArticleList from "../articles/ArticleList";
 
-function text(block: NotionRichText): string {
+function escape(str: string) {
+  return str.replaceAll(/"/g, '\\"');
+}
+
+// TODO : remplacer par une classe TextFormatter, plus propre
+function text(block: NotionRichText, articles: ArticleList): string {
   let text = block.plain_text;
   if (block.type === "equation")
     text = block.equation.expression;
+
+  if (block.type === "mention" && block.mention.type === "page") {
+    const page = articles.get(block.mention.page.id)
+    if (page) {
+      if (page.icon.type === "emoji" && page.icon.emoji) {
+        text = `${icon(page.icon)} ${page.title}`;
+      } else {
+        text = page.title;
+      }
+      return `<PageMention caption="${escape(text)}" url="/articles/${page.slug}"/>`;
+    }
+  }
 
   if (block.annotations.bold)
     text = `**${text}**`;
@@ -15,14 +33,19 @@ function text(block: NotionRichText): string {
     text = `~~${text}~~`;
   if (block.type === "equation")
     text = `$${text}$`;
-  if (block.href)
-    text = `[${text}](${block.href})`;
+  if (block.href) {
+    if (block.href.startsWith("https://www.notion.so/") || block.href.startsWith("/")) {
+      const id = block.href.substring(block.href.length - 32, block.href.length);
+      const page = articles.get(id);
+      text = page ? `[${text}](/articles/${page.slug})` : `[${text}](${block.href})`;
+    }
+  }
 
   return text;
 }
 
-export function texts(blocks: NotionRichText[], indent = ""): string {
-  return `${indent}${blocks.map(text).join("")}`;
+export function texts(blocks: NotionRichText[], articles: ArticleList): string {
+  return `${blocks.map(block => text(block, articles)).join("")}`;
 }
 
 function plaintext(block: NotionRichText): string {

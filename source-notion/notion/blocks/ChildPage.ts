@@ -1,11 +1,11 @@
-import Block from "./Block";
+import AbstractBlock from "./AbstractBlock";
 import {NotionBlock} from "../NotionTypes";
 import {texts} from "../NotionUtils";
 
 export type NotionParagraph = Extract<NotionBlock, { type: 'child_page' }>;
 
-export default class ChildPage extends Block {
-  constructor(private readonly block: NotionParagraph, children: Block[]) {
+export default class ChildPage extends AbstractBlock {
+  constructor(private readonly block: NotionParagraph, children: AbstractBlock[]) {
     super(block, children);
   }
 

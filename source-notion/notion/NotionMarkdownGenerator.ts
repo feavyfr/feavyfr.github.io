@@ -30,21 +30,6 @@ export default class NotionMarkdownGenerator {
     return frontMatter;
   }
 
-  private processLinks(links: NotionRichText[]) {
-    for (const link of links) {
-      const href = link.href;
-      if (href.startsWith("https://www.notion.so/")) {
-        const id = href.substring(href.length - 32, href.length);
-        if (id) {
-          const page = this.articles.get(id);
-          if (page) {
-            link.href = `/articles/${page.slug}`;
-          }
-        }
-      }
-    }
-  }
-
   private generateContent() {
     return this.page.toMarkdown(this.articles);
   }
@@ -77,9 +62,6 @@ export default class NotionMarkdownGenerator {
     if (this.page.icon && this.page.icon.type !== "emoji") {
       await this.generateImage("icon", { ...this.page.icon, caption: null });
     }
-
-    const links = this.page.getLinks();
-    this.processLinks(links);
 
     const content = this.generateFrontMatter() + this.generateContent();
     fs.writeFileSync(`${this.page.path}/index.md`, content);

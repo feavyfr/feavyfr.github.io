@@ -7,8 +7,9 @@ import {Link} from "gatsby";
 import {MDXProvider} from "@mdx-js/react";
 import TableOfContents from "./TableOfContents";
 import LinkPreview from "./LinkPreview";
+import PageMention from "./PageMention";
 
-const shortcodes = { TableOfContents, LinkPreview };
+const shortcodes = { TableOfContents, LinkPreview, PageMention };
 
 // markup
 const Layout: React.FC<{}> = ({ children }) => {

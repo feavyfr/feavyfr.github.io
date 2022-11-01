@@ -1,7 +1,7 @@
 import {Client} from "@notionhq/client";
 import Page from "./blocks/Page";
 import {NotionBlock} from "./NotionTypes";
-import Block from "./blocks/Block";
+import AbstractBlock from "./blocks/AbstractBlock";
 import Blocks from "./blocks/Blocks";
 
 export default class NotionAPI {
@@ -23,7 +23,7 @@ export default class NotionAPI {
     page.blocks = await this.getBlocks(page.id);
   }
 
-  public async getBlocks(block_id: string): Promise<Block[]> {
+  public async getBlocks(block_id: string): Promise<AbstractBlock[]> {
     let response = await this.notion.blocks.children.list({block_id: block_id, page_size: 100});
     const blocks: NotionBlock[] = response.results.filter(block => "type" in block) as NotionBlock[];
     while(response.has_more) {
@@ -32,7 +32,7 @@ export default class NotionAPI {
     }
     return Promise.all(
         blocks.map(
-            async (block): Promise<Block> => Blocks.create(block, block.has_children ? await this.getBlocks(block.id) : [])
+            async (block): Promise<AbstractBlock> => Blocks.create(block, block.has_children ? await this.getBlocks(block.id) : [])
         )
     );
   }

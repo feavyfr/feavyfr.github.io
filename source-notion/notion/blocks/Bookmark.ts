@@ -1,11 +1,11 @@
-import Block from "./Block";
+import AbstractBlock from "./AbstractBlock";
 import {NotionBlock} from "../NotionTypes";
 import {plaintexts} from "../NotionUtils";
 
 export type NotionBookmark = Extract<NotionBlock, { type: 'bookmark' }>;
 
-export default class Bookmark extends Block {
-  constructor(private readonly block: NotionBookmark, children: Block[]) {
+export default class Bookmark extends AbstractBlock {
+  constructor(private readonly block: NotionBookmark, children: AbstractBlock[]) {
     super(block, children);
   }
 

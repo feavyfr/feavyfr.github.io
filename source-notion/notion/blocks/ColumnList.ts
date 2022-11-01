@@ -1,12 +1,12 @@
-import Block from "./Block";
+import AbstractBlock from "./AbstractBlock";
 import {NotionBlock} from "../NotionTypes";
 import Image from "./Image";
 import ArticleList from "../../articles/ArticleList";
 
 export type NotionColumnList = Extract<NotionBlock, { type: 'column_list' }>;
 
-export default class ColumnList extends Block {
-  constructor(private readonly block: NotionColumnList, children: Block[]) {
+export default class ColumnList extends AbstractBlock {
+  constructor(private readonly block: NotionColumnList, children: AbstractBlock[]) {
     super(block, children);
   }
 

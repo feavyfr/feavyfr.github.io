@@ -1,10 +1,10 @@
-import Block from "./Block";
+import AbstractBlock from "./AbstractBlock";
 import {NotionBlock} from "../NotionTypes";
 
 export type NotionTableOfContents = Extract<NotionBlock, { type: 'table_of_contents' }>;
 
-export default class TableOfContents extends Block {
-  constructor(private readonly block: NotionTableOfContents, children: Block[]) {
+export default class TableOfContents extends AbstractBlock {
+  constructor(private readonly block: NotionTableOfContents, children: AbstractBlock[]) {
     super(block, children);
   }
 

@@ -1,12 +1,12 @@
 import {NotionBlock} from "../NotionTypes";
 import ArticleList from "../../articles/ArticleList";
 
-export default abstract class Block {
+export default abstract class AbstractBlock {
   public type: string;
   public id: string;
   public readonly internal: NotionBlock;
 
-  protected constructor(block: NotionBlock, public readonly children: Block[]) {
+  protected constructor(block: NotionBlock, public readonly children: AbstractBlock[]) {
     Object.assign(this, block);
     this.internal = block;
   }

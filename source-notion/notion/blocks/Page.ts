@@ -1,10 +1,10 @@
 import {NotionIcon, NotionImage, NotionImageFile, NotionRichText} from "../NotionTypes";
-import Block from "./Block";
+import AbstractBlock from "./AbstractBlock";
 import {plaintexts} from "../NotionUtils";
 import {toSlug} from "../../articles/utils";
 import ArticleList from "../../articles/ArticleList";
 
-export default class Page extends Block {
+export default class Page extends AbstractBlock {
   created_time: string;
   last_edited_time: string;
   archived: boolean;
@@ -40,21 +40,7 @@ export default class Page extends Block {
     this.path = `./src/articles/${this.slug}`;
   }
 
-  public getLinks(): NotionRichText[] {
-    const links = [];
-    this.visitDeep(block => {
-      if(block.internal[block.type]?.rich_text) {
-        for(const richText of block.internal[block.type].rich_text) {
-          if (richText.href) {
-            links.push(richText);
-          }
-        }
-      }
-    });
-    return links;
-  }
-
-  public set blocks(blocks: Block[]) {
+  public set blocks(blocks: AbstractBlock[]) {
     this.children.push(...blocks);
   }
 

@@ -1,15 +1,16 @@
-import Block from "./Block";
+import AbstractBlock from "./AbstractBlock";
 import {NotionBlock} from "../NotionTypes";
 import {texts} from "../NotionUtils";
+import ArticleList from "../../articles/ArticleList";
 
 export type NotionParagraph = Extract<NotionBlock, { type: 'bulleted_list_item' }>;
 
-export default class BulletedListItem extends Block {
-  constructor(private readonly block: NotionParagraph, children: Block[]) {
+export default class BulletedListItem extends AbstractBlock {
+  constructor(private readonly block: NotionParagraph, children: AbstractBlock[]) {
     super(block, children);
   }
 
-  public toMarkdown(): string {
-    return `* ${texts(this.block.bulleted_list_item.rich_text)}\n`;
+  public toMarkdown(articles: ArticleList): string {
+    return `* ${texts(this.block.bulleted_list_item.rich_text, articles)}\n`;
   }
 }

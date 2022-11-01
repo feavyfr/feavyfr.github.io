@@ -1,4 +1,4 @@
-import Block from "./Block";
+import AbstractBlock from "./AbstractBlock";
 import Heading1 from "./Heading1";
 import {NotionBlock} from "../NotionTypes";
 import Heading2 from "./Heading2";
@@ -18,7 +18,7 @@ import LinkPreview from "./LinkPreview";
 import Bookmark from "./Bookmark";
 import LinkToPage from "./LinkToPage";
 
-type BlockConstructor<T extends Block, B extends NotionBlock> = new (block: B, children: Block[]) => T;
+type BlockConstructor<T extends AbstractBlock, B extends NotionBlock> = new (block: B, children: AbstractBlock[]) => T;
 
 export default class Blocks {
   private static readonly blocks = new Map<string, BlockConstructor<any, any>>();
@@ -46,7 +46,7 @@ export default class Blocks {
     Blocks.blocks.set(type, block);
   }
 
-  public static create(block: NotionBlock, children: Block[]): Block {
+  public static create(block: NotionBlock, children: AbstractBlock[]): AbstractBlock {
     const ctor = Blocks.blocks.get(block.type);
     if(!ctor) {
       console.log("Unknown block type: " + block.type);
