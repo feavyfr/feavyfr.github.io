@@ -1,9 +1,9 @@
 ---
-created_time: 2022-10-22T18:35:00.000Z
-last_edited_time: 2022-11-01T18:08:00.000Z
+created_time: 2022-10-01
+last_edited_time: 2022-10-01
 slug: devblog-chibiland-4-loffuscation
 title: "Devblog Chibiland #4 — L’offuscation"
-tags: []
+tags: ["Chibiland"]
 icon_image: ./images/icon.png
 ---
 Petit article un peu hors-série pour parler de l’offuscation JavaScript car je trouvais ce sujet intéressant. 

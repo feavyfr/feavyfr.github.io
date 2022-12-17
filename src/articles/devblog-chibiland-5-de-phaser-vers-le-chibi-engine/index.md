@@ -1,6 +1,6 @@
 ---
-created_time: 2022-10-22T18:35:00.000Z
-last_edited_time: 2022-12-17T18:47:00.000Z
+created_time: 2022-12-17
+last_edited_time: 2022-12-17
 slug: devblog-chibiland-5-de-phaser-vers-le-chibi-engine
 title: "Devblog Chibiland #5 — De Phaser vers le Chibi Engine"
 tags: ["Chibi Engine","Chibiland"]
