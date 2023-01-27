@@ -5,8 +5,6 @@ slug: wip-devblog-chibiland-2-le-passage-de-django-a-quarkus
 title: "[WIP] Devblog Chibiland #2 — Le passage de Django à Quarkus"
 tags: ["Chibiland"]
 ---
-import TableOfContents from "../../components/TableOfContents";
-
 **Note : **Cet article est encore en cours d’élaboration (depuis plus d’un an 🤪)
 
 <TableOfContents data={props}/>
@@ -25,7 +23,7 @@ import TableOfContents from "../../components/TableOfContents";
 
 * Actuellement : backend “du bled”. Aucune automatisation de setup.
 
-![image](./images/bd01a23b-e613-4026-82b8-e6d64598facc.jpg)
+![image](./images/1c7cd654-d436-4290-be0a-091457d3b3bb.png)
 
 ## Solution : Quarkus
 
@@ -73,7 +71,7 @@ Solutions
 
 A voir pour plus tard mais sûrement pas nécessaire.
 
-![image](./images/739a5e16-d37c-4009-9123-6f2c627e7086.jpg)
+![image](./images/ad8e828e-e296-456c-a3ec-455499a6bfc6.png)
 
 ### Mise en place
 
@@ -88,15 +86,3 @@ A voir pour plus tard mais sûrement pas nécessaire.
 1. Mise en place du SSL.
 
 1. Mise en place du déploiement continu avec Docker (et Kubernetes ?) pour automatiser le déploiement lors d’un commit sur master.
-
-## A faire
-
-* Inscription d’utilisateurs.
-
-* Mot de passe oublié.
-
-* CRUD messages d’information (role=admin)
-
-* Protection CSRF ?
-
-

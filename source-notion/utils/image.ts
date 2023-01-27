@@ -5,6 +5,7 @@ import imageType from "image-type";
 import sizeOf from "image-size";
 
 export default async function downloadImage(url: string, dir: string, filename: string) {
+    console.log(`Downloading ${url}`);
     const data = await downloadFile(url);
     if (!data) {
         throw new Error("Failed to download image " + url);

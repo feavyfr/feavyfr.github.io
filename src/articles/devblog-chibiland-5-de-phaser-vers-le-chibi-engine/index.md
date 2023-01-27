@@ -6,13 +6,13 @@ title: "Devblog Chibiland #5 — De Phaser vers le Chibi Engine"
 tags: ["Chibi Engine","Chibiland"]
 icon_emoji: 🍒
 ---
-En Mai 2021, alors que je m’intéressais beaucoup à WebAssembly, je me suis mis à chercher un moteur de jeu C++ pour le web. J’entends par là un moteur qui permette de coder son jeu de A à Z en C++, comme Cocos2dx, pour ensuite le compiler en WASM et l’exécuter sur le Web (ce que Cocos2dx ne permet pas). Je n’en ai jamais trouvé et d’ailleurs je ne connais toujours pas tel moteur à l’heure actuelle.. donc si vous en connaissez, je suis preneur 😃
+En Mai 2021, alors que je m’intéressais beaucoup à WebAssembly, je me suis mis à chercher un moteur de jeu C++ pour le web. J’entends par là un moteur qui permette de coder son jeu de A à Z en C++, comme [Cocos2dx](https://www.cocos.com/en/cocos2dx), pour ensuite le compiler en WASM et l’exécuter sur le Web (ce que Cocos2dx ne permet pas). Je n’en ai jamais trouvé et d’ailleurs je ne connais toujours pas tel moteur à l’heure actuelle.. donc si vous en connaissez, je suis preneur 😃
 
-Bref, ça m’a donné une idée un peu folle : créer mon propre moteur de jeu 2D pour le Web en C++ et OpenGL : le Cherry Engine.
+Bref, ça m’a donné une idée un peu folle : créer mon propre moteur de jeu 2D pour le Web en C++ et OpenGL : le [Cherry Engine](https://cherrygameengine.github.io/).
 
 L’objectif du moteur était d’être simple et efficace et de permettre de coder des jeux web entièrement en C++. A côté de ça le but pour moi était d’apprendre le rendu OpenGL tout en me perfectionnant en C++.
 
-Alors j’ai commencé à apprendre OpenGL avec cette très bonne ressource mais j’ai assez vite décroché par manque de temps et motivation.
+Alors j’ai commencé à apprendre OpenGL avec [cette très bonne ressource](https://learnopengl.com/) mais j’ai assez vite décroché par manque de temps et motivation.
 
 Le Cherry Engine était un side-project fun, certes, mais je savais qu’il ne pourrait pas rivaliser avec les principaux moteurs de jeu web.
 
@@ -30,7 +30,7 @@ Mais à côté de ça…
 
 <TableOfContents data={props}/>
 
-## Phaser commençait à me fatiguer
+## [Phaser](https://phaser.io/) commençait à me fatiguer
 
 Phaser est le moteur que j’utilise actuellement pour Chibiland et il me déplaît pour plusieurs raisons:
 
@@ -91,15 +91,15 @@ Pourquoi ne pas joindre l’utile à l’agréable ?
 
 J’ai toujours eu envie de maintenir une bibliothèque pour aider d’autres développeur, designer ma propre API, la rendre la plus intuitive, agréable à utiliser... Créer mon propre moteur est quelque chose qui me permettrait de faire tout ça en m’amusant et tout en étant utile pour Chibiland, c’est le side-project idéal !
 
-Je me suis donc lancé dans la création du **Chibi Engine **!
+Je me suis donc lancé dans la création du [**Chibi Engine**](https://github.com/ChibiEngine/ChibiEngine)** **!
 
-Un moteur de jeu web basé sur PixiJS dont le développement sera orienté par Chibiland.
+Un moteur de jeu web basé sur [PixiJS](https://pixijs.com/) dont le développement sera orienté par Chibiland.
 
 L’idée est de créer un simple wrapper par dessus Pixi pour rendre le développement le plus simple et efficace possible, en lui intégrant directement des fonctionnalités essentielles comme **le chargement dynamique et transparent des assets **(plus de détails dans un prochain article).
 
 Pixi est l’idéal pour ça, c’est un moteur très modulaire, robuste, puissant et léger. Il offrira probablement un gain de performances à Chibiland tout en diminuant la taille des bundles.
 
-Un seul moteur physique sera intégré : PlanckJS, bien mieux que MatterJS (présent de base dans Phaser). Avec une couche d’abstraction par dessus pour en faciliter l’utilisation et donner la possibilité d’utiliser une autre implémentation, comme box2d-wasm par exemple.
+Un seul moteur physique sera intégré : PlanckJS, bien mieux que MatterJS (présent de base dans Phaser). Avec une couche d’abstraction par dessus pour en faciliter l’utilisation et donner la possibilité d’utiliser une autre implémentation, comme [box2d-wasm](https://github.com/Birch-san/box2d-wasm) par exemple.
 
 Le moteur intégrera également un système d’animation personnalisé. J’ai eu une idée de spécification pour faire des petites animations simples, quelque chose à cheval entre le frame par frame et Spine qui fonctionnera très bien pour Chibiland. Et dans l’idéal j’aimerais aussi faire un éditeur d’animation avec.
 
@@ -117,7 +117,7 @@ Qu’est-ce-qui m’empêcherait d’utiliser un autre moteur que PixiJS en dess
 
 Rien !
 
-Il pourrait marcher avec n'importe quoi. Pixi, Phaser.. Même Cocos2d-x pour faire des versions **natives pour mobiles et desktop**, ou three.js pour faire de la 3D !
+Il pourrait marcher avec n'importe quoi. Pixi, Phaser.. Même [Cocos2d-x](https://github.com/cocos2d/cocos2d-x) pour faire des versions **natives pour mobiles et desktop**, ou [three.js](https://threejs.org/) pour faire de la 3D !
 
 Cela permettrait d’améliorer les jeux beaucoup plus rapidement si les technologies évoluent.
 

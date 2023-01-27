@@ -10,7 +10,7 @@ Petit article un peu hors-série pour parler de l’offuscation JavaScript car j
 
 Attention cet article-là est technique 🧑‍💻
 
-Cela fait un moment que l’offuscateur JavaScript que j’utilisais m’embêtait (pour ne pas dire un mot plus vulgaire).
+Cela fait un moment que [l’offuscateur JavaScript que j’utilisais](https://github.com/javascript-obfuscator/javascript-obfuscator) m’embêtait (pour ne pas dire un mot plus vulgaire).
 
 En fait dans sa configuration la moins brutale on se retrouve avec ce genre de choses en sortie :
 
@@ -35,7 +35,7 @@ const a = {"0x5fd5a": "Flamiche"};
 
 Ce qui signifie que techniquement le processus est réversible !
 
-Et en effet avec un script à base d’eval de ce style, il est possible de remettre les chaînes originale à leur place et retrouver un code proche de celui en sortie de minimisation.
+Et en effet avec un script à base d’[eval](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/eval) de ce style, il est possible de remettre les chaînes originale à leur place et retrouver un code proche de celui en sortie de minimisation.
 
 <LinkPreview caption="" url="https://gist.github.com/Feavy/628913854683fcb396649401eeb2137e"/>
 
@@ -49,7 +49,7 @@ Car en effet, en activant certaines options il y a possibilité de vraiment reno
 
 Mais les utiliser sans casser le code est compliqué.
 
-Pour les utiliser sans (trop de) problème avec Chibiland j’étais obligé de maintenir un fork du projet car il fallait parvenir à renommer toutes les propriétés du jeu **mais pas celles du moteur Phaser (et autres bibliothèques)**, sinon le lien entre les sources ***vendor*** et les sources du jeu serait perdu.
+Pour les utiliser sans (trop de) problème avec Chibiland j’étais obligé de maintenir un [fork du projet](https://github.com/Feavy/javascript-obfuscator-1/) car il fallait parvenir à renommer toutes les propriétés du jeu **mais pas celles du moteur Phaser (et autres bibliothèques)**, sinon le lien entre les sources ***vendor*** et les sources du jeu serait perdu.
 
 L’offuscateur propose une option `reservedNames` pour pallier ce problème. Comme son nom l’indique elle permet de réserver des noms de propriétés à ne pas modifier.
 
@@ -59,7 +59,7 @@ C’était extrêmement coûteux et en pratique ça n’allait jamais jusqu’au
 
 ![Quelques mots-clés de Phaser et PlanckJS](./images/e0690cc0-349f-464f-b2c0-db78af8b9850.png "Quelques mots-clés de Phaser et PlanckJS")
 
-Ce fork ajoutait donc une option (exactReservedNames) pour ignorer des propriétés précises **sans utiliser de RegExp**, ce qui permettait de tester toutes les propriétés du jeu en un temps raisonnable.
+Ce fork [ajoutait donc une option (exactReservedNames)](https://github.com/Feavy/javascript-obfuscator-1/commit/e45a6bb37a163d3655c7ea6d4f3ad33206c9b9b7) pour ignorer des propriétés précises **sans utiliser de RegExp**, ce qui permettait de tester toutes les propriétés du jeu en un temps raisonnable.
 
 Mais Chibiland possède lui aussi son lot de mots réservés. Et donc avant chaque mise en production, le jeu était cassé et je devais deviner les nouveaux mots réservés à ajouter jusqu’à temps qu’il fonctionne à nouveau… C’était assez fastidieux.
 

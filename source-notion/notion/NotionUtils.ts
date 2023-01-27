@@ -38,6 +38,8 @@ function text(block: NotionRichText, articles: ArticleList): string {
       const id = block.href.substring(block.href.length - 32, block.href.length);
       const page = articles.get(id);
       text = page ? `[${text}](/articles/${page.slug})` : `[${text}](${block.href})`;
+    } else {
+      text = `[${text}](${block.href})`;
     }
   }
 

@@ -2,11 +2,9 @@
 created_time: 2020-08-30
 last_edited_time: 2020-08-30
 slug: devblog-chibiland-1-presentation-et-technologies
-title: "Devblog Chibiland #1 – Présentation et technologies"
+title: "Devblog Chibiland #1 — Présentation et technologies"
 tags: ["Chibiland"]
 ---
-import TableOfContents from "../../components/TableOfContents";
-
 Voici le premier article du *Devblog *du jeu que je suis en train de créer en ce moment et qui s’appelle **Chibiland **! Son site est ouvert [https://chibi.land/](https://chibi.land/) 😮 et le jeu est même déjà en phase d’alpha privée !
 
 L’alpha est réservée au membre du serveur Discord du jeu donc n’hésitez pas à le rejoindre si vous voulez tester : [https://discord.gg/94KdGuU](https://www.youtube.com/redirect?event=video_description&v=w_uobFeTOVA&redir_token=QUFFLUhqazZHMXFpRGRNOWZmQUlOTHR1MHRjSzZCQW1fQXxBQ3Jtc0ttMVdvRXB6bkx1V2t3Y0c3enE3Z1BXSjJwamkwcXhSTklGYUw1YjNDOHIxRTN3cVkwdjYtSGZOMFVDeWFIRlZuWTNGdjdaQVBFLVZwNG1zc2NNRkpudGZWQVdMWUl1ZDg5OHVHRXVLdGtnU3hycnNOcw%3D%3D&q=https%3A%2F%2Fdiscord.gg%2F94KdGuU). Bien-sûr ne vous attendez pas à un truc incroyable pour le moment, pour le moment ce n’est vraiment que la base du jeu que j’ai en tête.
@@ -27,15 +25,17 @@ Au départ j’avais très peu d’ambition avec ce projet. En fait l’idée de
 
 Je n’avais vraiment pas été cherché très loin dans le concept, comme le prouvent ces premières images du jeu :
 
+
+
 <div class="columns">
-<div class="column" style="flex-grow: 1">
+<div class="column">
 
 ![image](./images/165df215-8f5b-440c-b545-018507f10991.png)
 
 </div>
-<div class="column" style="flex-grow: 1">
+<div class="column">
 
-![image](./images/eb0657c8-4d9a-41cd-88cc-5a398d147a1a.gif)
+![image](./images/18ecb357-77f9-452b-abf7-80277af5b975.gif)
 
 </div>
 </div>
@@ -56,14 +56,14 @@ J’ai donc commencé à réfléchir à des nouvelles fonctionnalités pour rend
 
 Au final je me suis complètement éloigné de Blablaland, ce qui est vraiment une bonne chose.
 
-### Les technologies utilisées
+## Les technologies utilisées
 
 ### Client
 
 Le client de jeu est fait avec des technologies web modernes, il utilise le moteur de jeu Phaser ainsi que PlanckJS pour gérer la physique.
 
 <div class="columns">
-<div class="column">
+<div class="column column-icon">
 
 <div class="notion-image" style="width: 120px; height: 120px;">
 
@@ -79,7 +79,7 @@ Le langage principal utilisé pour le client est le [TypeScript](https://www.ty
 </div>
 
 <div class="columns">
-<div class="column">
+<div class="column column-icon">
 
 <div class="notion-image" style="width: 120px; height: 103px;">
 
@@ -95,7 +95,7 @@ J’ai choisi d’utiliser le moteur de jeu [Phaser](https://phaser.io/) car c
 </div>
 
 <div class="columns">
-<div class="column">
+<div class="column column-icon">
 
 <div class="notion-image" style="width: 120px; height: 103px;">
 
@@ -119,7 +119,7 @@ Au final le moteur physique pour lequel j’ai opté est [Planck.js](https://pi
 ### Serveur
 
 <div class="columns">
-<div class="column">
+<div class="column column-icon">
 
 <div class="notion-image" style="width: 120px; height: 69px;">
 
@@ -137,7 +137,7 @@ Le serveur de jeu est fait en Java, principalement car c’est mon langage de pr
 ### Site web
 
 <div class="columns">
-<div class="column">
+<div class="column column-icon">
 
 <div class="notion-image" style="width: 120px; height: 120px;">
 

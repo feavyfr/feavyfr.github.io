@@ -2,38 +2,22 @@
 created_time: 2021-05-01
 last_edited_time: 2021-05-01
 slug: wip-poo-et-si-on-essayait-de-parler-anglais
-title: "[WIP] POO – Et si on essayait de parler anglais ?"
+title: "[WIP] POO — Et si on essayait de parler anglais ?"
 tags: ["Programmation"]
 ---
-import TableOfContents from "../../components/TableOfContents";
-
-<div class="columns">
-<div class="column">
-
-<div class="notion-image" style="width: 118px; height: 118px;">
-
-![image](./images/e13bed75-8c24-41fb-9f12-171914f5849d.png)
-</div>
-
-</div>
-<div class="column">
-
 Cette page constitue des notes de réflexions sur une idée de paradigme de programmation orientée objet. Rien n’est structuré pour l’instant.
 
-Le paradigme Sentence.
+N’est-ce-pas bizarre que dans la bibliothèque Javacord on ait une méthode Channel#sendMessage. Littéralement ça veut dire “Le channel envoie un message”, hors il envoie rien du tout, c’est le serveur qui envoie le message au channel. Ce serait peut-être mieux appelé `channel.receiveMessage(“blabla”)` où là on lit “Le channel reçoit le message ‘blabla'”
 
-</div>
-</div>
+Obtenir tous les joueurs en vie dans l’overworld ? facile `Player.all().in(World.called(“overworld”)).are(Player::alive);`
 
-N’est-ce-pas bizarre que dans la bibliothèque Javacord on ait une méthode Channel#sendMessage. Littéralement ça veut dire “Le channel envoie un message”, hors il envoie rien du tout, c’est le serveur qui envoie le message au channel. Ce serait peut-être mieux appelé channel.receiveMessage(“blabla”) où là on lit “Le channel reçoit le message ‘blabla'”
+Ou même `Player.all().in(World.called(“overworld”)).are(alive);`
 
-Tu veux tous les joueurs en vie dans l’overworld ? facile Player.all().in(World.called(“overworld”)).are(Player::alive);Ou mêmePlayer.all().in(World.called(“overworld”)).are(alive);
+Par exemple `player.sendMessage(“Blabla”);` quelqu’un qui n’a jamais fait de programmation je pense qu’il comprend “Le joueur envoie le message “Blabla”, intuitivement
 
-Genre player.sendMessage(“Blabla”); quelqu’un qui a jamais fait de programmation je pense qu’il comprend “Le joueur envoie le message ‘Blabla'”, fin intuitivement
+![image](./images/72edfffd-c709-40ff-b9d3-4f1d1f9ef594.png)
 
-![image](./images/830c34aa-1903-4f92-b556-9fef211112c1.png)
-
-imaginons que tu codes une nouvelle API pour serveur Minecraft. Là y’a un joueur qui envoie un message dans le tchat. Pour écouter les messages tu ferais :
+imaginons coder une nouvelle API pour serveur Minecraft. Un un joueur envoie un message dans le tchat. Pour écouter les messages le plus intuitif est :
 
 ```java
 player.onReceiveMessage(msg ->
@@ -49,13 +33,13 @@ player.onSendMessage(msg -> {
 
 ```
 
-⇒ Ben là plutot send je suppose
+⇒ Plutot send
 
-Parce que pour revenir la dessus ce serait encore plus bizarre de mélanger player.sendMessage(…) qui veut dire qu’on envoie un message au joueur et player.onSendMessage qui là par contre traite le cas où c’est le joueur qui envoie le message
+Et oui ! Ce serait encore plus bizarre de mélanger `player.sendMessage(…)` qui veut dire qu’on envoie un message au joueur et `player.onSendMessage` qui là par contre traite le cas où c’est le joueur qui envoie le message.
 
-Et ça voudrait aussi dire que player.sendMessage n’appelle pas player.onSendMessage ! Alors que c’est littéralement on + le nom de la méthode
+Et ça voudrait aussi dire que `player.sendMessage` n’appelle pas `player.onSendMessage` ! Alors que c’est littéralement on suivi du nom de la méthode.
 
-Mais le fais de dire receive je pense que ça enduit d’ajouter un from
+⇒ Mais le fais de dire receive je pense que ça enduit d’ajouter un from
 
 Si tu veux préciser le "from" y’a l’embarras du choix pour ça. Si on dit que "me" c’est le serveur :
 

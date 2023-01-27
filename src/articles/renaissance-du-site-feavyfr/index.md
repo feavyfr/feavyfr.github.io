@@ -5,8 +5,6 @@ slug: renaissance-du-site-feavyfr
 title: "Renaissance du site feavy.fr"
 tags: ["Feavy.fr"]
 ---
-import TableOfContents from "../../components/TableOfContents";
-
 J’ai décidé de profiter du confinement pour relancer un peu mes projets tombés dans l’oubli. A commencer par celui du site [feavy.fr](http://feavy.fr/) ! (Et ce n’est pas un poisson d’Avril ?)
 
 En effet personne (ou presque) ne le sait mais ce site a été créé vers Juillet 2019 à la base (vous pouvez d’ailleurs retrouver l’ancienne version ici : [https://feavy.yo.fr/](https://feavy.yo.fr/)). Ceci afin de pouvoir m’exprimer sur des sujets en lien avec ce qui me passionne (donc l’informatique principalement) et m’entraîner à la création de site et de thème WordPress. Le thème WordPress, parlons-en justement puisque c’est la cause principale qui m’a fait abandonné le site précédent.

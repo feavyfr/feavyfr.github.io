@@ -5,8 +5,6 @@ slug: wip-objects-calisthenics
 title: "[WIP] Objects Calisthenics"
 tags: ["Programmation"]
 ---
-import TableOfContents from "../../components/TableOfContents";
-
 Vous connaissez peut-être les *Objects Calisthenics*, un ensemble de règle à appliquer pour écrire du code propre, c’est-à-dire facilement maintenable et réutilisable.
 
 <TableOfContents data={props}/>

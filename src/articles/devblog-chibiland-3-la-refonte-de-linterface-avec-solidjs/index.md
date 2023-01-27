@@ -2,11 +2,9 @@
 created_time: 2022-07-14
 last_edited_time: 2022-07-14
 slug: devblog-chibiland-3-la-refonte-de-linterface-avec-solidjs
-title: "Devblog Chibiland #3 – La refonte de l’interface avec SolidJS"
+title: "Devblog Chibiland #3 — La refonte de l’interface avec SolidJS"
 tags: ["Chibiland"]
 ---
-import TableOfContents from "../../components/TableOfContents";
-
 Hello 👋
 
 J’ai décidé de (re)lancer un devblog au rythme d’un article par mois pour vous tenir informés de l’avancée du projet 😃
@@ -29,6 +27,7 @@ J’avais fait la première version de l’interface sans trop y réfléchir et 
 
 J’ai donc décidé de la revoir. Ma première idée était d’utiliser un pack de composants UI tout prêt tel que :
 
+<LinkPreview caption="" url="https://assetstore.unity.com/packages/2d/gui/cartoon-gui-pack-48850"/>
 
 Mais ça n’a pas vraiment plu au reste de l’équipe ; trop cartoon, trop style jeu mobile classique. Le jeu aurait perdu de son identité.
 
@@ -45,7 +44,7 @@ La carte de joueur a aussi été refaite pour se rapprocher du style de Club Pen
 
 ![image](./images/5bf20421-f6f1-467e-86dd-b6dd7e2e8136.png)
 
-![image](./images/7ecfd4da-74ee-4511-b432-cb3731a2c93a.png)
+![image](./images/6bf3e1c9-b871-4c18-b91a-edb22d3607b9.png)
 
 </div>
 <div class="column">
@@ -54,7 +53,7 @@ La carte de joueur a aussi été refaite pour se rapprocher du style de Club Pen
 
 ![image](./images/d8ec94c8-69f2-4958-92ea-a08314c3cdeb.png)
 
-![image](./images/6bf3e1c9-b871-4c18-b91a-edb22d3607b9.png)
+![image](./images/7ecfd4da-74ee-4511-b432-cb3731a2c93a.png)
 
 </div>
 </div>

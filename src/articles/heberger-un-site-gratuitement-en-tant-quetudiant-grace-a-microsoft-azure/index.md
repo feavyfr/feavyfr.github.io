@@ -6,8 +6,6 @@ title: "Héberger un site gratuitement en tant qu’étudiant grâce à Microsof
 tags: ["Sysadmin"]
 icon_image: ./images/icon.png
 ---
-import TableOfContents from "../../components/TableOfContents";
-
 
 
 Jusqu’à présent mon site [feavy.fr](http://feavy.fr/) était hébergé sur [Planethoster](https://www.planethoster.com/fr/). J’avais choisi cet hébergeur car il propose une offre gratuite et possède des serveurs en France contrairement aux autres hébergeurs gratuits que j’ai pu voir.
@@ -18,21 +16,7 @@ Je suis donc passé temporairement sur [Infinity Free](https://infinityfree.net
 
 C’est la qu’intervient ce tuto !! Puisque dans celui-ci on va voir la solution que j’ai mise en place pour palier ce problème, à savoir utiliser Microsoft Azure pour héberger un site WordPress et, en tant qu’étudiant, [bénéficier des services gratuits et des 100$ offerts qu’on a pour avoir cet hébergement gratos](https://azure.microsoft.com/fr-fr/free/students/). *Prolo approved !*
 
-<div class="columns">
-<div class="column column-icon">
-
-<div class="notion-image" style="width: 118px; height: 118px;">
-
-![image](./images/ad9bbec9-0557-4bd5-a7d5-f94d4106f48b.png)
-</div>
-
-</div>
-<div class="column">
-
 Attention, je tiens à préciser que cette technique n’est avantageuse **que si vous êtes étudiants**. Si ce n’est pas le cas vous allez vous retrouver à payer un prix excessif pour un simple site WordPress.
-
-</div>
-</div>
 
 Voici les étapes que nous allons suivre :
 
@@ -66,25 +50,7 @@ Vous pouvez laisser les autres parties inchangées. A noter qu’on vous demande
 
 Vous pouvez ensuite lancer le déploiement et attendre qu’il se termine…
 
-<div class="columns">
-<div class="column column-icon">
-
-<div class="notion-image" style="width: 118px; height: 118px;">
-
-![image](./images/814423ae-c4f9-48b3-9f49-0cb2b12b8f99.png)
-</div>
-
-</div>
-<div class="column">
-
 **Quelques informations sur la VM B1s**
-
-Celle-ci possède 1 processeur et 1 Go de RAM, ce qui est largement suffisant pour héberger un site WordPress. Elle possède cependant 320 entrées/sorties maximales par seconde ce qui, je pense, risque de ralentir un site avec beaucoup de trafic.
-
-Au niveau du coût on est sur du 7.39 € / mois ce qui fait 81.29 € au total pour un an (en comptant le mois gratuit). Il faut donc prévoir au moins 81.29 crédits sur les 100 offerts pour héberger ce site.
-
-</div>
-</div>
 
 Une fois que c’est terminé accédez à la ressource et éteignez la VM, choisissez bien que vous voulez **conserver son adresse IP**. Allez ensuite dans *Disques*, cliquez sur votre disque puis allez dans *configuration *et saisissez une taille de *64 Go* pour ce disque. Cela va avoir pour effet de le transformer en disque *p6*, ce qui va non seulement augmenter sa taille, mais aussi vous permettre de **ne pas payer le stockage** car les étudiants ont droit à deux disques *p6 *offerts ?
 
@@ -114,7 +80,7 @@ ssh -i vm_key [login]@[IP de la VM]
 
 *Bingo !*
 
-![image](./images/59847471-ebe6-4400-a4f1-79a62be50318.png)
+![image](./images/f3b64f15-826a-46a3-b84e-22357732be66.png)
 
 ## Installation du serveur web (LAMP)
 
@@ -134,7 +100,7 @@ Vous pouvez dès présent vérifier que votre serveur web fonctionne bien en ent
 
 *La page de bienvenue d’Apache s’affiche : le serveur web est opérationnel !*
 
-![image](./images/fc6398e7-7bcd-436d-ae6e-b3fc70b29e0f.png)
+![image](./images/d63b373f-b15b-418b-898b-a0e3c142dc4b.png)
 
 Nous allons maintenant initialiser la base de données MySQL. Pour cela entrez la commande suivante :
 
@@ -192,7 +158,7 @@ sudo chmod 700 -R /var/www
 
 Parfait. Maintenant en entrant l’IP publique de la VM vous devriez voir la page d’installation de WordPress :
 
-![image](./images/7a7106c6-a399-42b7-8d06-016cf07c25d9.png)
+![image](./images/0fa7b16b-c01a-4e6f-80c2-fcaf66e0183b.png)
 
 Je vous laisse donc installer WordPress. Notez la configuration de la base de données :
 
@@ -204,7 +170,7 @@ Je vous laisse donc installer WordPress. Notez la configuration de la base de do
 
 **Aparté : **Comment supprimer `index.php` de l’URL des permaliens de vos articles ?
 
-![image](./images/af79058b-1beb-4c50-b882-ccd7d285319d.png)
+![image](./images/25c406ff-ab59-41fb-9185-4c32f3712df3.png)
 
 Après avoir installé WordPress vous avez peut-être, comme moi, essayé de modifier les permaliens en supprimant *index.php* de ces derniers (parce que ça fait pas très beau on va pas se mentir), et vous vous êtes sûrement rendu compte qu’après ça, vos articles n’étaient plus accessibles. Ceci est dû au fait qu’apache n’est pas configuré pour lire le fichier *.htaccess* situé dans le répertoire d’installation de WordPress. Pour changer ça voici la marche à suivre :
 
@@ -274,7 +240,7 @@ Dans cette étape vous devrez entre autres :
 
 Et voila ! Votre site est maintenant sécurisé !
 
-![image](./images/7bd800ef-b1d3-4c4d-9934-31fa0f232d6c.png)
+![image](./images/f5388cb2-7ee2-4b69-ba8b-df64fab64e2e.png)
 
 **Note : **maintenant que tout est configuré je vous conseille de fermer le port 22 de votre VM pour pas que le service SSH soit un point d’entrée pour de potentiels hackers.
 
@@ -286,4 +252,4 @@ On a les caractéristiques d’un bon hébergeur payant, avec notamment **plus 
 
 *Anecdote 2 : J’ai bien fait de partir d’Infinity Free, mon abonnement a été temporairement suspendu le jour-même où je suis passé à Microsoft Azure *?*, apparemment j’aurais dépassé le cota journalier **d’utilisation**… alors que j’ai à peine utilisé le site*.
 
-![image](./images/2e62b225-f13c-4793-ab14-1aac04c34019.png)
+![image](./images/72caef19-cf06-4998-801c-9922dc01f097.png)

@@ -6,7 +6,7 @@ title: "Feavy.fr - La retour avec Gatsby et Notion !"
 tags: []
 icon_image: ./images/icon.png
 ---
-Vous le voyez, le site feavy.fr est tout beau tout neuf et… très épuré surtout !
+Vous le voyez, le site [feavy.fr](https://feavy.fr) est tout beau tout neuf et… très épuré surtout !
 
 J’ai décidé de lâcher Wordpress et mon hébergeur en carton pour confectionner un site dans l’esprit Jamstack avec le générateur de site statique **Gatsby**, et surtout avec **Notion** comme CMS !
 

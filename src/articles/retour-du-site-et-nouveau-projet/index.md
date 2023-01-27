@@ -5,8 +5,6 @@ slug: retour-du-site-et-nouveau-projet
 title: "Retour du site et nouveau projet"
 tags: ["Feavy.fr"]
 ---
-import TableOfContents from "../../components/TableOfContents";
-
 Me revoilà !
 
 Ce faisait un moment que ce site était hors ligne mais il est maintenant de retour !
