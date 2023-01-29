@@ -23,6 +23,15 @@ function text(block: NotionRichText, articles: ArticleList): string {
     }
   }
 
+  if (block.href) {
+    if (block.href.startsWith("https://www.notion.so/") || block.href.startsWith("/")) {
+      const id = block.href.substring(block.href.length - 32, block.href.length);
+      const page = articles.get(id);
+      text = page ? `[${text}](/articles/${page.slug})` : `[${text}](${block.href})`;
+    } else {
+      text = `[${text}](${block.href})`;
+    }
+  }
   if (block.annotations.bold)
     text = `**${text}**`;
   if (block.annotations.italic)
@@ -33,15 +42,6 @@ function text(block: NotionRichText, articles: ArticleList): string {
     text = `~~${text}~~`;
   if (block.type === "equation")
     text = `$${text}$`;
-  if (block.href) {
-    if (block.href.startsWith("https://www.notion.so/") || block.href.startsWith("/")) {
-      const id = block.href.substring(block.href.length - 32, block.href.length);
-      const page = articles.get(id);
-      text = page ? `[${text}](/articles/${page.slug})` : `[${text}](${block.href})`;
-    } else {
-      text = `[${text}](${block.href})`;
-    }
-  }
 
   return text;
 }

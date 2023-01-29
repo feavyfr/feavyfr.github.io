@@ -11,6 +11,10 @@ export default class BulletedListItem extends AbstractBlock {
   }
 
   public toMarkdown(articles: ArticleList): string {
-    return `* ${texts(this.block.bulleted_list_item.rich_text, articles)}\n`;
+    let result = `* ${texts(this.block.bulleted_list_item.rich_text, articles)}\n`;
+    for(let i = 0; i < this.children.length; i++) {
+      result += `    `+this.children[i].toMarkdown(articles);
+    }
+    return result;
   }
 }

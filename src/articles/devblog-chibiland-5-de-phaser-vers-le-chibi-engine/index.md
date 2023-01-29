@@ -58,7 +58,7 @@ En passant à la version 50 j’ai eu quelques surprises :
 
 * Sur Android des artefacts bleus se sont mis à apparaître au niveau des sprites affichés. 
 
-Résultat :  J’ai un magnifique dossiers `fixes` avec 3 fixes que je suis obligé d’appliquer comme un sale sur le moteur.
+Résultat :  J’ai un magnifique dossier `fixes` avec trois fixes que je suis obligé d’appliquer comme un sale sur le moteur.
 
 ### Pas assez axé POO, dynamisme
 
@@ -75,6 +75,8 @@ En fait le moteur ne me paraît pas être fait pour des jeux en ligne, où les r
 ### Une API lourde
 
 * La syntaxe est assez lourde.
+    * L’API est parfois très moche. Comment savoir si le jeu est joué sur un écran tactile ?
+Avec `scene.sys.game.device.input.touch` bien sûr !
 
 * Et ça ne s'améliore pas avec Phaser 4 qui abandonne les méthodes de classe pour passer par des espèces de procédures globales. Chose que je n’avais encore jamais vue.
 Par exemple pour ajouter un élément à une scène ce n’est plus `scene.add(elmt)` mais `AddChild(scene, elmt)` Niveau autocomplétions ça va être fun.
@@ -91,7 +93,7 @@ Pourquoi ne pas joindre l’utile à l’agréable ?
 
 J’ai toujours eu envie de maintenir une bibliothèque pour aider d’autres développeur, designer ma propre API, la rendre la plus intuitive, agréable à utiliser... Créer mon propre moteur est quelque chose qui me permettrait de faire tout ça en m’amusant et tout en étant utile pour Chibiland, c’est le side-project idéal !
 
-Je me suis donc lancé dans la création du [**Chibi Engine**](https://github.com/ChibiEngine/ChibiEngine)** **!
+Je me suis donc lancé dans la création du **[Chibi Engine](https://github.com/ChibiEngine/ChibiEngine)**** **!
 
 Un moteur de jeu web basé sur [PixiJS](https://pixijs.com/) dont le développement sera orienté par Chibiland.
 
