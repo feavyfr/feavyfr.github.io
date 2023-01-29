@@ -1,6 +1,6 @@
 ---
-created_time: 2022-12-17
-last_edited_time: 2022-12-17
+created_time: 2022-10-22T18:35:00.000Z
+last_edited_time: 2023-01-29T18:02:00.000Z
 slug: devblog-chibiland-5-de-phaser-vers-le-chibi-engine
 title: "Devblog Chibiland #5 — De Phaser vers le Chibi Engine"
 tags: ["Chibi Engine","Chibiland"]
@@ -93,7 +93,7 @@ Pourquoi ne pas joindre l’utile à l’agréable ?
 
 J’ai toujours eu envie de maintenir une bibliothèque pour aider d’autres développeur, designer ma propre API, la rendre la plus intuitive, agréable à utiliser... Créer mon propre moteur est quelque chose qui me permettrait de faire tout ça en m’amusant et tout en étant utile pour Chibiland, c’est le side-project idéal !
 
-Je me suis donc lancé dans la création du **[Chibi Engine](https://github.com/ChibiEngine/ChibiEngine)**** **!
+Je me suis donc lancé dans la création du **[Chibi Engine](https://github.com/ChibiEngine/ChibiEngine)** !
 
 Un moteur de jeu web basé sur [PixiJS](https://pixijs.com/) dont le développement sera orienté par Chibiland.
 

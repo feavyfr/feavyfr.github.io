@@ -1,6 +1,6 @@
 ---
-created_time: 2022-10-01
-last_edited_time: 2022-10-01
+created_time: 2022-10-22T18:35:00.000Z
+last_edited_time: 2022-12-17T19:18:00.000Z
 slug: devblog-chibiland-4-loffuscation
 title: "Devblog Chibiland #4 — L’offuscation"
 tags: ["Chibiland"]

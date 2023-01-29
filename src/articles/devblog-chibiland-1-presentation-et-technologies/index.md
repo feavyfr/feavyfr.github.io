@@ -1,6 +1,6 @@
 ---
-created_time: 2020-08-30
-last_edited_time: 2020-08-30
+created_time: 2022-10-15T11:31:00.000Z
+last_edited_time: 2023-01-29T17:39:00.000Z
 slug: devblog-chibiland-1-presentation-et-technologies
 title: "Devblog Chibiland #1 — Présentation et technologies"
 tags: ["Chibiland"]

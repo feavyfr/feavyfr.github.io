@@ -1,6 +1,6 @@
 ---
-created_time: 2020-04-05
-last_edited_time: 2020-04-05
+created_time: 2022-10-14T20:31:00.000Z
+last_edited_time: 2023-01-29T17:35:00.000Z
 slug: heberger-un-site-gratuitement-en-tant-quetudiant-grace-a-microsoft-azure
 title: "Héberger un site gratuitement en tant qu’étudiant grâce à Microsoft Azure"
 tags: ["Sysadmin"]
@@ -248,7 +248,7 @@ Pour conclure, même si l’installation de WordPress est plus compliquée qu’
 
 On a les caractéristiques d’un bon hébergeur payant, avec notamment **plus de 60 Go de stockage en SSD**, et tout ça gratuitement ! Ça c’est cool ?
 
-*Pour la petite anecdote, mon ancien site hébergé chez PlanetHoster s’est mis à fonctionner de nouveau. Vous pouvez le retrouver ici : *[*https://feavy.yo.fr/*](https://feavy.yo.fr/). *Notez que planetHoster reste une excellente solution si vous souhaitez héberger un site WordPress gratuitement. Il faudra juste penser à réactiver votre site tous les mois… et à contacter le support en cas de problème* ?
+*Pour la petite anecdote, mon ancien site hébergé chez PlanetHoster s’est mis à fonctionner de nouveau. Vous pouvez le retrouver ici : **[https://feavy.yo.fr/](https://feavy.yo.fr/)*. *Notez que planetHoster reste une excellente solution si vous souhaitez héberger un site WordPress gratuitement. Il faudra juste penser à réactiver votre site tous les mois… et à contacter le support en cas de problème* ?
 
 *Anecdote 2 : J’ai bien fait de partir d’Infinity Free, mon abonnement a été temporairement suspendu le jour-même où je suis passé à Microsoft Azure *?*, apparemment j’aurais dépassé le cota journalier **d’utilisation**… alors que j’ai à peine utilisé le site*.
 
