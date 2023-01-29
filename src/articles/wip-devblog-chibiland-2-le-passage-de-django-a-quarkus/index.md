@@ -1,5 +1,5 @@
 ---
-created_time: 2022-10-16T21:41:00.000Z
+created_time: 2021-06-18
 last_edited_time: 2023-01-29T17:36:00.000Z
 slug: wip-devblog-chibiland-2-le-passage-de-django-a-quarkus
 title: "[WIP] Devblog Chibiland #2 — Le passage de Django à Quarkus"

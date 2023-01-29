@@ -1,5 +1,5 @@
 ---
-created_time: 2022-10-16T01:15:00.000Z
+created_time: 2021-05-01
 last_edited_time: 2023-01-29T17:39:00.000Z
 slug: wip-poo-et-si-on-essayait-de-parler-anglais
 title: "[WIP] POO — Et si on essayait de parler anglais ?"
