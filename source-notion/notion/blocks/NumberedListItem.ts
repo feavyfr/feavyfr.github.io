@@ -13,7 +13,7 @@ export default class NumberedListItem extends AbstractBlock {
   public toMarkdown(articles: ArticleList): string {
     let result = `1. ${texts(this.block.numbered_list_item.rich_text, articles)}\n`;
     for(let i = 0; i < this.children.length; i++) {
-      result += `    `+this.children[i].toMarkdown(articles);
+      result += `  `+this.children[i].toMarkdown(articles);
     }
     return result;
   }

@@ -75,7 +75,7 @@ En fait le moteur ne me paraît pas être fait pour des jeux en ligne, où les r
 ### Une API lourde
 
 * La syntaxe est assez lourde.
-    * L’API est parfois très moche. Comment savoir si le jeu est joué sur un écran tactile ?
+  * L’API est parfois très moche. Comment savoir si le jeu est joué sur un écran tactile ?
 Avec `scene.sys.game.device.input.touch` bien sûr !
 
 * Et ça ne s'améliore pas avec Phaser 4 qui abandonne les méthodes de classe pour passer par des espèces de procédures globales. Chose que je n’avais encore jamais vue.
