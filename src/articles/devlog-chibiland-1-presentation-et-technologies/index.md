@@ -1,8 +1,8 @@
 ---
 created_time: 2020-08-30
-last_edited_time: 2023-01-29T17:39:00.000Z
-slug: devblog-chibiland-1-presentation-et-technologies
-title: "Devblog Chibiland #1 — Présentation et technologies"
+last_edited_time: 2023-02-15T19:32:00.000Z
+slug: devlog-chibiland-1-presentation-et-technologies
+title: "Devlog Chibiland #1 — Présentation et technologies"
 tags: ["Chibiland"]
 ---
 Voici le premier article du *Devblog *du jeu que je suis en train de créer en ce moment et qui s’appelle **Chibiland **! Son site est ouvert [https://chibi.land/](https://chibi.land/) 😮 et le jeu est même déjà en phase d’alpha privée !
