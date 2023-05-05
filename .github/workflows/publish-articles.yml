@@ -17,7 +17,7 @@ jobs:
           GATSBY_NOTION_TOKEN: ${{ secrets.GATSBY_NOTION_TOKEN }}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          file_pattern: src/articles/**
+          file_pattern: src/articles/
           commit_message: Publish articles
           commit_user_name: GitHub
           commit_user_email: github-action
