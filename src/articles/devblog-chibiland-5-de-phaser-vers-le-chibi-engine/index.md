@@ -1,8 +1,8 @@
 ---
 created_time: 2022-12-17
-last_edited_time: 2023-02-15T19:32:00.000Z
-slug: devlog-chibiland-5-de-phaser-vers-le-chibi-engine
-title: "Devlog Chibiland #5 — De Phaser vers le Chibi Engine"
+last_edited_time: 2023-05-05T13:14:00.000Z
+slug: devblog-chibiland-5-de-phaser-vers-le-chibi-engine
+title: "Devblog Chibiland #5 — De Phaser vers le Chibi Engine"
 tags: ["Chibi Engine","Chibiland"]
 icon_emoji: 🍒
 ---

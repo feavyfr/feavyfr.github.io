@@ -1,8 +1,8 @@
 ---
 created_time: 2022-07-14
-last_edited_time: 2023-02-15T19:32:00.000Z
-slug: devlog-chibiland-3-la-refonte-de-linterface-avec-solidjs
-title: "Devlog Chibiland #3 — La refonte de l’interface avec SolidJS"
+last_edited_time: 2023-05-05T13:14:00.000Z
+slug: devblog-chibiland-3-la-refonte-de-linterface-avec-solidjs
+title: "Devblog Chibiland #3 — La refonte de l’interface avec SolidJS"
 tags: ["Chibiland"]
 ---
 Hello 👋

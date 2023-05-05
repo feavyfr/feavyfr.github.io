@@ -1,8 +1,8 @@
 ---
 created_time: 2021-06-18
-last_edited_time: 2023-02-15T19:32:00.000Z
-slug: wip-devlog-chibiland-2-le-passage-de-django-a-quarkus
-title: "[WIP] Devlog Chibiland #2 — Le passage de Django à Quarkus"
+last_edited_time: 2023-05-05T13:14:00.000Z
+slug: wip-devblog-chibiland-2-le-passage-de-django-a-quarkus
+title: "[WIP] Devblog Chibiland #2 — Le passage de Django à Quarkus"
 tags: ["Chibiland"]
 ---
 **Note : **Cet article est encore en cours d’élaboration (depuis plus d’un an 🤪)

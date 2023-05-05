@@ -1,8 +1,8 @@
 ---
 created_time: 2022-10-01
-last_edited_time: 2023-02-15T19:32:00.000Z
-slug: devlog-chibiland-4-loffuscation
-title: "Devlog Chibiland #4 — L’offuscation"
+last_edited_time: 2023-05-05T13:14:00.000Z
+slug: devblog-chibiland-4-loffuscation
+title: "Devblog Chibiland #4 — L’offuscation"
 tags: ["Chibiland"]
 icon_image: ./images/icon.png
 ---
@@ -96,7 +96,7 @@ Mais pour en savoir plus il faudra lire l’article suivant 😉
 
 **Suite :**
 
-[Devlog Chibiland #5 — De Phaser vers le Chibi Engine](/articles/devlog-chibiland-5-de-phaser-vers-le-chibi-engine)
+[Devblog Chibiland #5 — De Phaser vers le Chibi Engine](/articles/devblog-chibiland-5-de-phaser-vers-le-chibi-engine)
 
 Page not found 23835940-46b0-445d-8dc3-74a45065838f
 
